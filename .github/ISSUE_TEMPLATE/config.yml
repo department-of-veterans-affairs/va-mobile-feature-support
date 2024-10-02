@@ -3,6 +3,6 @@ projects: ["department-of-veteran-affairs/va-mobile-feature-support"]
 
 contact_links:
   - name: Feature request
-    url: https://github.com/department-of-veteran-affairs/va-mobile-feature-support/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=[Feature]%20
+    url: https://github.com/department-of-veteran-affairs/va-mobile-feature-support/issues/new?assignees=&template=feature_request.md
     about: Use this link to request a new feature in the correct repository.
 
