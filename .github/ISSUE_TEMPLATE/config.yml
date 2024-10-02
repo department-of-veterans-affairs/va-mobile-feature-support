@@ -1,5 +1,5 @@
 blank_issues_enabled: false
-projects: ["department-of-veteran-affairs/va-mobile-feature-support"]
+
 
 contact_links:
   - name: Feature request
@@ -9,7 +9,7 @@ name: Bug Report
 description: File a bug report.
 title: "[Bug]: "
 labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
+projects: ["department-of-veteran-affairs/va-mobile-feature-support"]
 assignees:
   - octocat
 body:
