@@ -1,6 +1,6 @@
 ---
 name: General Issue
-about: ''
+about: 'General Issue for VA Mobile Feature Support'
 title: ''
 labels: Ticket Review
 assignees: ''
