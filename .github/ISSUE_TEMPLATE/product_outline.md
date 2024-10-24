@@ -14,6 +14,7 @@ assignees: ''
 As a (describe effected user), 
 We need to (fill in description of business goal),
 so that (describe desired outcome).
+<!--_**Required.** Please note you can have more than one story, if applicable. If this is technical work to achieve a larger initiative, the user story should represent that piece of the initiative so it’s clear what problem we are solving._-->
 
 ## Hypothesis or Bet
 **If** _we make this change_ **then** _we expect this to happen_.
