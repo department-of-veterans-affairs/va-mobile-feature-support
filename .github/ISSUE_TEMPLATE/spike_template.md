@@ -8,11 +8,9 @@ assignees: ''
 ---
 
 ### User Story
-<!--Write a user story (if possible) that conforms to this format:
-As [_blank_], 
-We need to [_blank_],
-So that [_blank_].-->
-<!--_**Required.** Please note you can have more than one story, if applicable. If this is a technical investigation to achieve a larger initiative, the user story should represent that piece of the initiative._-->
+As a (describe effected user), 
+We need to (fill in description of business goal),
+so that (describe desired outcome).
 
 ### Description
 <!--What is this ticket trying to accomplish? Be specific about where the scope starts and ends. What business objective are we trying to meet? Specify what should or shouldn't change for the end user. <!--_**Required.** Describe the problem._-->
