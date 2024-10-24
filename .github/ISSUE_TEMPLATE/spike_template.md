@@ -7,11 +7,6 @@ assignees: ''
 
 ---
 
-## User Story - Business Goal
-
-- [ ] Ticket is understood
-<!--_**Required.** Please note you can have more than one story, if applicable. If this is a technical investigation to achieve a larger initiative, the user story should represent that piece of the initiative._-->
-
 ### User Story
 <!--Write a user story (if possible) that conforms to this format:
 As [_blank_], 
