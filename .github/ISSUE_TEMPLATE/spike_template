@@ -10,7 +10,6 @@ assignees: ''
 ## User Story - Business Goal
 
 - [ ] Ticket is understood
-
 <!--_**Required.** Please note you can have more than one story, if applicable. If this is a technical investigation to achieve a larger initiative, the user story should represent that piece of the initiative._-->
 
 ### User Story
@@ -23,7 +22,6 @@ So that [_blank_].-->
 ### Description
 <!--What is this ticket trying to accomplish? Be specific about where the scope starts and ends. What business objective are we trying to meet? Specify what should or shouldn't change for the end user. <!--_**Required.** Describe the problem._-->
 - [ ] Ticket is understood
-
 
 ### Additional Info and Resources
 <!--Always attempt to include additional information.  This could include screenshots, log snippets, links to applicable code files, and/or articles/websites that have relevant info on the issue. Leave blank if n/a.-->
