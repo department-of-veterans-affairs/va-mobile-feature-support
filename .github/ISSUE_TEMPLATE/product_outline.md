@@ -1,3 +1,12 @@
+---
+name: Product Outline Template
+about: 'Product Outline Template for VA Mobile Feature Support'
+title: ''
+labels: Ticket Review
+assignees: ''
+
+---
+
 ## Product Outline
 [Link](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/product-management/product-outline-template.md)
 
