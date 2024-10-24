@@ -1,6 +1,6 @@
 ---
-name: General Issue
-about: 'General Issue for VA Mobile Feature Support'
+name: Bug Template
+about: 'Bug Template for VA Mobile Feature Support'
 title: ''
 labels: Ticket Review
 assignees: ''
@@ -8,10 +8,9 @@ assignees: ''
 ---
 
 ### User Story
-<!--Write a user story (if possible) that conforms to this format:
-As [_blank_], 
-We need to [_blank_],
-So that [_blank_].-->
+As a (describe effected user), 
+We need to (fill in description of business goal),
+so that (describe desired outcome).
 
 ### Description
 <!--What is this ticket trying to accomplish? Be specific about where the scope starts and ends. What business objective are we trying to meet? Specify what should or shouldn't change for the end user.-->
