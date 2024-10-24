@@ -1,14 +1,18 @@
-## User Story - Business Need
+---
+name: User Story Template
+about: 'User Story Template for VA Mobile Feature Support'
+title: ''
+labels: Ticket Review
+assignees: ''
 
-- [ ] Ticket is understood
+---
 
+### User Story
+As a (describe effected user), 
+We need to (fill in description of business goal),
+so that (describe desired outcome).
 <!--_**Required.** Please note you can have more than one story, if applicable. If this is technical work to achieve a larger initiative, the user story should represent that piece of the initiative so it’s clear what problem we are solving._-->
 
-### User Story(ies)
-
-**As a**        <!---   describe the affected user  ---><br>
-**I want**      <!---   describe the need           ---><br>
-**So that**     <!---   describe the outcome]       ---> 
 
 ### Additional Info and Resources
 <!--Always attempt to include additional information.  This could include screenshots, log snippets, links to applicable code files, and/or articles/websites that have relevant info on the issue. Leave blank if n/a.-->
