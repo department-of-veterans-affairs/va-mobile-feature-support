@@ -1,8 +1,8 @@
 ---
 name: User Story Template
-about: 'User Story Template for VA Mobile Feature Support'
+about: User Story Template for VA Mobile Feature Support
 title: ''
-labels: Ticket Review
+labels: ''
 assignees: ''
 
 ---

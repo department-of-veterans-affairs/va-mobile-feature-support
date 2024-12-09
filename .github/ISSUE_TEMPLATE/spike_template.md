@@ -1,8 +1,8 @@
 ---
 name: Spike Template
-about: 'Spike Template for VA Mobile Feature Support'
+about: Spike Template for VA Mobile Feature Support
 title: ''
-labels: Ticket Review
+labels: ''
 assignees: ''
 
 ---

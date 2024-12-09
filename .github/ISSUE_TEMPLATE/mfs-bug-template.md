@@ -1,8 +1,8 @@
 ---
-name: Bug Template
-about: 'Bug Template for VA Mobile Feature Support'
+name: MFS Bug Template
+about: Bug Template for VA Mobile Feature Support
 title: ''
-labels: Ticket Review
+labels: ''
 assignees: ''
 
 ---
@@ -55,4 +55,3 @@ _For QA to populate. Leave blank if QA is not applicable on this ticket._
 
 ### Validation
 <!--Internal validation steps and requirements before submitting a PR for external approval-->
-

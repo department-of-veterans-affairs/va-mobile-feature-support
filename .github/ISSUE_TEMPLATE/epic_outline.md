@@ -1,8 +1,8 @@
 ---
 name: Product Outline Template
-about: 'Product Outline Template for VA Mobile Feature Support'
+about: Product Outline Template for VA Mobile Feature Support
 title: ''
-labels: Ticket Review
+labels: ''
 assignees: ''
 
 ---
@@ -29,4 +29,3 @@ _Which Objective / Key Result does this epic push forward?_
 ## How to configure this issue
 - [ ] **Labeled with Team** (`product support`, `analytics-insights`, `operations`, `Console-Services`, `tools-fe`,`content-ia`, `service-design`, `vsa-*`)
 - [ ] **Labeled with Practice Area** (`backend`, `frontend`, `devops`, `design`, `research`, `product`, `ia`, `qa`, `analytics`, `contact center`, `research`, `accessibility`, `content`)
-
