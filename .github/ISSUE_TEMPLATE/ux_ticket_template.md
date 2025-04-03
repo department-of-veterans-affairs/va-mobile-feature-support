@@ -2,7 +2,7 @@
 name: MFS UX Ticket Template
 about: Used to create UX tickets for the MFS team, based on input provided in #266
 title: ''
-labels: 'UX work'
+labels: 'ux'
 assignees: ''
 
 ---
