@@ -8,9 +8,27 @@ Please view the release notes below for information about our deployments to var
 
 ------
 
+## Veteran Status Card Web Redesign | 04/17/2025
+- Added feature flag for front end elements
 
-## Coming Soon | March 20 - April 25, 2025
-- Please bear with us as we catch up!
+## Veteran Status Card Web Redesign | 04/16/2025
+- Added feature flag for back end elements
+
+## VAHB Mobile App Veteran Status Card Redesign 04/09/2025
+- Added feature flag for redesign implementation
+
+## VAHB Mobile App Veteran Status Card Redesign 04/07/2025
+- Veteran Status Card now supports zooming on both iOS and Android so that Veterans can read text at various zoom percentages
+
+## VAHB Mobile App Bug Fixes 04/03/2025
+- Fixed multitap issue where developers were unable to log in to demo mode without editing `e2e/tests/utils.ts`
+
+## VAHB Mobile App Veteran Status Card Surfacing | 04/03/2025
+- Added logging and monitoring so that mobile app API traffic can be differentiated from web app API traffic
+
+## VAHB Mobile App Veteran Status Card Redesign 04/03/2025
+- Implemented design and content updates for a better user experience
+- Add screen orientation awareness so the Veteran Status Card displays correctly when a user changes their screen orientation
 
 ## VAHB Mobile App Veteran Status Card Surfacing | 03/20/2025
 - Display a contextual error message when the Veteran Service History and Eligibility API returns an unexpected error response
