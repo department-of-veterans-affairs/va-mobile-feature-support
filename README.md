@@ -35,6 +35,9 @@ Our team has contributed to the following products to date:
 
 - [Veteran Status Card Surfacing](https://github.com/department-of-veterans-affairs/va.gov-team/blob/75019932daa028ec5d415031f2891e96cf324397/products/veteran-status/mobile/mobile-product-brief.md)  |  **Objective 1** - The Veteran Status Card provides information about a Veteran's Status and is only accessible to eligible Veterans. Mobile app users do not know the Veteran Status Card exists in the mobile app if they are not eligible. The Iterate, Innovate, and Run (IIR) team managed the research and designs to allow ineligible Veterans to be presented with the Proof of Veteran Status button and understand why they are not eligible for this card. This feature was released on April 22, 2025.  
 
+## Our Work at a Glance
+- [Release Notes](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/teams/feature-support-military-history/release-notes)
+- [Roadmap](https://github.com/orgs/department-of-veterans-affairs/projects/1427/views/5)
 
 ## DSVA Slack Channel
 
