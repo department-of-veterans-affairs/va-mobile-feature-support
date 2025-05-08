@@ -1,5 +1,5 @@
 # Lessons Learned 
-## Product: Mobile Overpayments and Copayments (Debt Services)
+## Product: Mobile Overpayments and Copayments (Debt Services/Financial Management Team)
 
 This tracks lessons learned from working on features for other teams so that we can continuously improve our process. Everyone from both teams is welcome to contribute to this document.
 
