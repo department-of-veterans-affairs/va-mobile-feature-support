@@ -8,6 +8,16 @@ Please view the release notes below for information about our deployments to var
 
 ------
 
+## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
+
+- **PDF updates** – Proof-of-Veteran-Status PDF page copy updated; PDF-error guidance moved into the new FAQ.
+- **Dedicated VSC page** – Introduces a standalone route that hosts the redesigned card and its FAQ.
+- **Easy access from Profile** – “Access your Veteran Status Card” link added in Profile › Military Information (feature-flag controlled).
+- **FAQ section** – Covers eligibility, PDF downloads, and troubleshooting; displayed directly beneath the card on the new page.
+- **Alert updates** – Centralized `VeteranStatusAlerts` component shows system, eligibility, and PDF-error messages.
+- **A11y tested & zoom verified** – Tested zoom up to 400 % to meet accessibility requirements. Ran Axe DevTools scan and fixed a11y issues.
+- **Legacy card hidden** – Original card suppressed when the `vetStatusStage1` flag is enabled to avoid duplicate UI.
+
 ## Veteran Status Card Web Redesign | 04/17/2025
 - Added feature flag for front end elements
 
