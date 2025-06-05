@@ -44,7 +44,6 @@ Our team has contributed to the following products to date:
 Please reach out to us at our DSVA Slack channel: `#mobile-feature-support-public`
 
 ## Key Stakeholders
-- Jeff Barnes, VA Product Owner, VA, jeffrey.barnes4@va.gov
 - Michelle Middaugh, VA Product Owner, VA, suzanne.middaugh@va.gov
 - Parker Baranowski, Program Manager, Oddball, parker.baranowski@oddball.io
 - Natalie Gibbons, Product Lead, Oddball, natalie.davied@oddball.io
