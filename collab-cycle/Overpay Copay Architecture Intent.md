@@ -1,4 +1,4 @@
-# Architecture Intent meeting template
+# Architecture Intent: Overpay/Copay
 
 ## Instructions
 
