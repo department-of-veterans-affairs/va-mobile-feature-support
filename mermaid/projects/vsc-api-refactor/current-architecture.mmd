@@ -1,15 +1,15 @@
 graph TD
     subgraph "Web Platform (va.gov)"
-        WEB[Web Frontend] --> API1[serviceHistory API]
-        WEB --> API2[vetVerificationStatus API]
+        WEB[Web Frontend] --> API1[Web serviceHistory API]
+        WEB --> API2[Web vetVerificationStatus API]
         API1 --> WEB_COMP[Frontend Computation]
         API2 --> WEB_COMP
         WEB_COMP --> WEB_UI[Display Web UI]
     end
     
     subgraph "Mobile Platform"
-        MOBILE[Mobile App] --> API3[mobile serviceHistory API]
-        MOBILE --> API4[mobile vetVerificationStatus API]
+        MOBILE[Mobile App] --> API3[Mobile serviceHistory API]
+        MOBILE --> API4[Mobile vetVerificationStatus API]
         API3 --> MOBILE_COMP[Frontend Computation]
         API4 --> MOBILE_COMP
         MOBILE_COMP --> MOBILE_UI[Display Mobile UI]

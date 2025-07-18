@@ -37,9 +37,10 @@ The refactor introduces a new unified backend service that:
 
 ### Key Components
 
-#### New Unified Endpoint
-- **Endpoint**: `/veteranStatusCard`
-- **Consumers**: Both web and mobile applications
+#### New Platform-Specific Endpoints
+- **Web Endpoint**: `/web/veteranStatusCard`
+- **Mobile Endpoint**: `/mobile/veteranStatusCard`
+- **Consumers**: Platform-specific frontends
 - **Response**: Standardized format with status, data, UI configuration, and messaging
 
 #### Unified Backend Service
@@ -92,7 +93,7 @@ The refactor introduces a new unified backend service that:
 ## Migration Strategy
 
 ### Phase 1: New Endpoint Development
-- Develop new `/veteranStatusCard` endpoint
+- Develop new `/web/veteranStatusCard` and `/mobile/veteranStatusCard` endpoints
 - Implement unified backend service
 - Create comprehensive test suite
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This diagram details the new standardized response format that the unified `/veteranStatusCard` endpoint will return, including success, warning, and error states with corresponding UI-ready data.
+This diagram details the new standardized response format that both `/web/veteranStatusCard` and `/mobile/veteranStatusCard` endpoints will return from the unified backend service, including success, warning, and error states with corresponding UI-ready data.
 
 ## Response Structure Details
 

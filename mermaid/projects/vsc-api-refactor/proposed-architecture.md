@@ -8,9 +8,10 @@ This diagram presents the new unified backend service architecture that addresse
 
 The proposed architecture introduces a fundamental shift from frontend computation to backend-driven logic:
 
-### **New Unified Backend Service**
-- **Single API Endpoint**: `/veteranStatusCard` serves both web and mobile
-- **Veteran Status Card Service**: Centralized business logic processing
+### **New Architecture Components**
+- **Platform-Specific Endpoints**: `/web/veteranStatusCard` and `/mobile/veteranStatusCard`
+- **Platform-Specific Layer**: Handles authentication, permissions, and platform concerns
+- **Unified Backend Service**: Centralized business logic processing
 - **Unified Business Logic**: All computation happens in the backend
 - **Multiple Data Sources**: Service History, Vet Verification, and future sources
 - **Standardized Response Builder**: Consistent output format

@@ -1,6 +1,8 @@
 graph TD
     subgraph "New API Response Structure"
-        API[veteranStatusCard API] --> RESPONSE{Response Type}
+        WEB_API[Web veteranStatusCard API] --> VSC_SERVICE[Veteran Status Card Service]
+        MOBILE_API[Mobile veteranStatusCard API] --> VSC_SERVICE
+        VSC_SERVICE --> RESPONSE{Response Type}
         
         RESPONSE -->|Success| SUCCESS[Success Response]
         RESPONSE -->|Warning| WARNING[Warning Response]
@@ -48,7 +50,9 @@ graph TD
     SUCCESS_STRUCT -.-> COMP3
     WARNING_STRUCT -.-> COMP4
     
-    style API fill:#4caf50
+    style WEB_API fill:#4caf50
+    style MOBILE_API fill:#4caf50
+    style VSC_SERVICE fill:#4caf50
     style SUCCESS fill:#4caf50
     style WARNING fill:#ff9800
     style ERROR fill:#f44336

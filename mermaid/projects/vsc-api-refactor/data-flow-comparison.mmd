@@ -26,9 +26,10 @@ graph TD
     
     subgraph "AFTER: Proposed Implementation"
         subgraph "Unified Flow"
-            A1[Web Frontend] --> A2[New Veteran Status Card API]
-            A3[Mobile App] --> A2
+            A1[Web Frontend] --> A2[Web veteranStatusCard API]
+            A3[Mobile App] --> A12[Mobile veteranStatusCard API]
             A2 --> A4[Unified Backend Service]
+            A12 --> A4
             A4 --> A5[Service History Service]
             A4 --> A6[Vet Verification Service]
             A4 --> A7[Future Data Sources]
@@ -53,6 +54,8 @@ graph TD
     M4 -.->|Eliminates| A8
     W5 -.->|Standardizes| A10
     M5 -.->|Standardizes| A11
+    W2 -.->|Becomes| A2
+    M2 -.->|Becomes| A12
     
     %% Problem to benefit mapping
     P1 -.->|Solves| B1
@@ -68,6 +71,7 @@ graph TD
     style A1 fill:#c8e6c9
     style A3 fill:#d1c4e9
     style A2 fill:#4caf50
+    style A12 fill:#4caf50
     style A8 fill:#4caf50
     style A9 fill:#2196f3
     style P1 fill:#ffebee
