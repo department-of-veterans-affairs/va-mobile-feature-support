@@ -1,0 +1,10 @@
+{
+  "format": "png",
+  "theme": "default",
+  "width": 1200,
+  "height": 800,
+  "backgroundColor": "white",
+  "puppeteerConfig": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+  }
+}
