@@ -102,7 +102,7 @@ node cli.js --format svg
 node cli.js --theme dark
 
 # Set custom dimensions
-node cli.js --width 1600 --height 1200
+node cli.js --width 2400 --height 1600
 
 # Show help
 node cli.js --help
@@ -115,19 +115,62 @@ node cli.js --help
 ```json
 {
   "format": "png",
-  "theme": "default",
-  "width": 1200,
-  "height": 800,
-  "backgroundColor": "white"
+  "theme": "va-custom",
+  "width": 2400,
+  "height": 1600,
+  "backgroundColor": "white",
+  "customThemes": {
+    "va-custom": {
+      "theme": "base",
+      "themeVariables": {
+        "primaryColor": "#005ea2",
+        "primaryTextColor": "#ffffff",
+        "fontFamily": "Source Sans Pro, Arial, sans-serif"
+      }
+    }
+  }
 }
 ```
 
 ### Available Options
 
 - **Formats**: `png`, `svg`, `pdf`
-- **Themes**: `default`, `dark`, `forest`, `neutral`, `base`
+- **Themes**: 
+  - `va-custom` (default): Official VA.gov Design System colors
+  - `default`: Mermaid default theme
+  - `dark`: Dark theme
+  - `forest`: Forest theme
+  - `neutral`: Neutral theme
+  - `base`: Base theme (customizable)
 - **Dimensions**: Custom width/height in pixels
 - **Background**: Color for PNG/PDF outputs
+
+### Custom Themes
+
+You can create custom themes by adding them to the `customThemes` section in `config.json`:
+
+```json
+{
+  "customThemes": {
+    "my-custom-theme": {
+      "theme": "base",
+      "themeVariables": {
+        "primaryColor": "#ff6b6b",
+        "primaryTextColor": "#ffffff",
+        "primaryBorderColor": "#ee5a52",
+        "fontFamily": "Arial, sans-serif"
+      }
+    }
+  }
+}
+```
+
+Then use it with:
+```bash
+make compile THEME=my-custom-theme
+```
+
+**Note**: Custom themes must use `"theme": "base"` as the base theme, as only the base theme supports customization in Mermaid.
 
 ## Creating a New Project
 

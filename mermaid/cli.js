@@ -72,15 +72,24 @@ Usage: node cli.js [options]
 Options:
   -p, --project <name>    Compile specific project only
   -f, --format <format>   Output format (png, svg, pdf) [default: png]
-  -t, --theme <theme>     Mermaid theme (default, dark, forest, etc.)
+  -t, --theme <theme>     Theme (va-custom, default, dark, forest, etc.)
   -w, --width <pixels>    Output width in pixels
   -h, --height <pixels>   Output height in pixels
       --help              Show this help message
 
+Available Themes:
+  va-custom               Official VA.gov Design System colors
+  default                 Mermaid default theme
+  dark                    Dark theme
+  forest                  Forest theme
+  neutral                 Neutral theme
+  base                    Base theme (customizable)
+
 Examples:
-  node cli.js                           # Compile all projects
+  node cli.js                           # Compile all projects with va-custom theme
   node cli.js --project my-project      # Compile specific project
   node cli.js --format svg --theme dark # Use SVG format with dark theme
+  node cli.js --theme va-custom          # Use custom VA theme
   `);
 }
 
@@ -104,8 +113,24 @@ function compileFile(inputFile, outputFile, config) {
     command += ` -f ${config.format}`;
   }
   
+  // Handle custom themes or built-in themes
   if (config.theme) {
-    command += ` -t ${config.theme}`;
+    if (config.customThemes && config.customThemes[config.theme]) {
+      // Use custom theme configuration
+      const customTheme = config.customThemes[config.theme];
+      const configData = {
+        theme: customTheme.theme,
+        themeVariables: customTheme.themeVariables
+      };
+      
+      // Create a temporary config file for the custom theme
+      const tempConfigFile = path.join(__dirname, 'temp-config.json');
+      fs.writeFileSync(tempConfigFile, JSON.stringify(configData, null, 2));
+      command += ` -c "${tempConfigFile}"`;
+    } else {
+      // Use built-in theme
+      command += ` -t ${config.theme}`;
+    }
   }
   
   if (config.width) {
@@ -123,8 +148,20 @@ function compileFile(inputFile, outputFile, config) {
   try {
     execSync(command, { stdio: 'inherit' });
     console.log(`✓ Compiled: ${path.basename(inputFile)} → ${path.basename(outputFile)}`);
+    
+    // Clean up temporary config file if it was created
+    const tempConfigFile = path.join(__dirname, 'temp-config.json');
+    if (fs.existsSync(tempConfigFile)) {
+      fs.unlinkSync(tempConfigFile);
+    }
   } catch (error) {
     console.error(`✗ Failed to compile ${path.basename(inputFile)}:`, error.message);
+    
+    // Clean up temporary config file on error too
+    const tempConfigFile = path.join(__dirname, 'temp-config.json');
+    if (fs.existsSync(tempConfigFile)) {
+      fs.unlinkSync(tempConfigFile);
+    }
   }
 }
 
@@ -201,7 +238,12 @@ function main() {
   console.log('Mermaid Diagram Compiler');
   console.log('========================');
   console.log(`Format: ${config.format}`);
-  console.log(`Theme: ${config.theme}`);
+  
+  if (config.customThemes && config.customThemes[config.theme]) {
+    console.log(`Theme: ${config.theme} (custom)`);
+  } else {
+    console.log(`Theme: ${config.theme} (built-in)`);
+  }
 
   if (options.project) {
     compileProject(options.project, config);
