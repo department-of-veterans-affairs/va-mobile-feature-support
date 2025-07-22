@@ -43,6 +43,8 @@
 
 ## Metrics, logging, observability, alerting
 - Identify key areas to monitor
+  - Key areas to monitor for the user include screen views, statement downloads, and url navigation to pay.gov with Google Analytics
+  - Success and errors through the API will be tracked and alerted through datadog and likely linked to a new slack channel specifically for overpay/copay
 
 ## Infrastructure and network changes
 - List any changes or additions
