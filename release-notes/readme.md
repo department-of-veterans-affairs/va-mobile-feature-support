@@ -7,6 +7,8 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VAHB Mobile App Analytics | 07/22/2025
+- **Claim/Decision Letter Type Analytics** - Updated the `vama_ddl_letter_view` event so the Claims team can view a breakdown of Claim/Decision Letter types and their total counts in Google Analytics.
 
 ## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
 
