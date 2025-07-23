@@ -9,9 +9,15 @@
 - Call out any engineering challenges; UX is reviewed in the [Design Intent meeting][DI]
 
 ## Frontend changes
-- Identify any significant code changes
-- Identify any new design system components needed or changes to current components
-- Describe any product analytics being gathered
+- Identify any significant code changes:
+  - Adding new screens for debts and copayments overview/details
+  - Integration of new backend API endpoints (e.g., [new medical_copays controller](https://github.com/department-of-veterans-affairs/va-mobile-feature-support/issues/402#issuecomment-2847360826))
+- Identify any new design system components needed or changes to current components:
+  - If the team decides we want to include integrated payments, we anticipate creating a new action sheet/menu component within the app. This component would initially not be part of the design system library, though it may be integrated into it later if successful and approved by VA UX standards. No other components are expected.
+- Describe any product analytics being gathered:
+  - Page view events (overpayment & copayment debt screens)
+  - Interaction events for external payment links (pay.va.gov & pay.gov)
+  - Overall app volume after feature is implemented
 
 ## Backend changes
 - Does the project introduce any new or unusual infrastructure dependencies?
@@ -39,7 +45,7 @@
 - Identify PII and PHI and where and how it will be stored, processed, expired and deleted
 
 ## Libraries and dependencies
-- List new or updated dependencies
+- No new libraries/dependencies are expected to be added
 
 ## Metrics, logging, observability, alerting
 - Identify key areas to monitor
