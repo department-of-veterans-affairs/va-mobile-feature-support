@@ -48,17 +48,27 @@
 - List any changes or additions
 
 ## Test strategy
-- Describe automated, manual and user acceptance test strategy
-- Describe required test data and test user accounts
+- Describe automated, manual and user acceptance test strategy:
+  - Our new feature will be covered by unit tests utilizing mock data
+  - We will also be adding E2E tests for the new components
+  - We will leverage test users for manual testing covering various scenarios/use cases
+- Describe required test data and test user accounts:
+  - That information will be captured [here](https://github.com/department-of-veterans-affairs/va-mobile-feature-support/issues/577)
 
 ## Rollout plan
 - List scope of any feature flags
+  - We plan to use a feature flag for this work and enabling it when the time comes
+  - If there are any issues with the feature then we can disable the flag
 - Identify other teams to coordinate with
+  - We'll coordinate with the Financial Management Team in case of any issues
 - Describe rollback plan
+  - We can turn off the feature flag if need be. Worst case our changes can be reverted as well if there are further issues. 
 
 ## Internal administration tasks
 - What maintenance or administration tasks do you anticipate will need to be performed periodically?
+  - We do not anticipate introducing any new periodic maintenance or internal administrative tasks for this feature.
 - Describe how you intend for these tasks to be performed (e.g., through an internal web page, through terminal access, etc.).
+  - N/A (no tasks expected)
 
 ## Security
 - What questions do you have regarding items on the [security checklist](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/collab-cycle/architecture-intent-meeting.md#security-checklist)?
