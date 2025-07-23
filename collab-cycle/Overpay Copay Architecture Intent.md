@@ -49,6 +49,8 @@
 
 ## Metrics, logging, observability, alerting
 - Identify key areas to monitor
+  - Key areas to monitor for the user include screen views, statement downloads, and url navigation to pay.gov with Firebase/Google Analytics
+  - Success and errors through the API will be tracked and alerted through datadog and linked to an alert slack channel
 
 ## Infrastructure and network changes
 - List any changes or additions
