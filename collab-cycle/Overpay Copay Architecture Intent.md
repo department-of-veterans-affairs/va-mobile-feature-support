@@ -57,7 +57,8 @@
 
 ## Rollout plan
 - List scope of any feature flags
-  - We plan to use a feature flag for this work. Putting the entire feature behind this flag and gradually rolling it out to production when the time comes
+  - We plan to use a feature flag for this work and enabling it when the time comes
+  - If there are any issues with the feature then we can disable the flag
 - Identify other teams to coordinate with
   - We'll coordinate with the Financial Management Team in case of any issues
 - Describe rollback plan
