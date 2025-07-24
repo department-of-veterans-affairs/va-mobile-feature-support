@@ -2,7 +2,10 @@
 
 ## Product Description
 - Brief overview of motivation for the change from an engineering & security point of view
-- Link to Collaboration Cycle Request issue
+  - Currently, within the mobile app, a Veteran cannot access any information about how much they owe for Benefit Overpayment Debt or Copayment bills. This feature will allow Veterans to view the total amount they owe for those respective debts.
+  - This feature would be added within the Payments tab, and if a Veteran has either Overpayments or Copayments, they would see the amount of money owed and how many outstanding debts/bills they have.
+  - As part of the MVP, we could allow for Veterans to take action on their debts/bills. These actions include resolving the debt, which would take them directly out of the app and to pay.gov (for copayments) and pay.va.gov (for overpayments). Veterans can also dispute charges and request assistance from the VA due to financial hardship, with both actions linking them to the appropriate resources within VA.gov. 
+- [Link](https://github.com/department-of-veterans-affairs/va.gov-team/issues/109407) to Collaboration Cycle Request issue
 
 ## UX Design Description
 - For user-facing changes, link to UX prototype or wireframes if available
