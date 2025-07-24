@@ -80,5 +80,8 @@
 
 ## Security
 - What questions do you have regarding items on the [security checklist](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/collab-cycle/architecture-intent-meeting.md#security-checklist)?
+  - None
 - Are there any other security concerns about your project that you want to discuss?
+  - None
 - What [threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) have you done, and how did the results influence your planned architecture?
+  - N/A
