@@ -25,28 +25,44 @@
 
 ## Backend changes
 - Does the project introduce any new or unusual infrastructure dependencies?
+  - No, the mobile backend will use existing infrastructure and patterns already established in vets-api
 - Do you need to poll any APIs for status?
+  - No, APIs involved will use standard request-response patterns
 - Are you handling all failure and error cases while in custody of your users's data?
+  - Yes, standard error handling and logging patterns in vets-api will be implemented. We will handle API failures gracefully, providing clear error messages to the frontend and logging detailed error information for debugging purposes
 
 ## Internal API changes
 - List new or modified APIs in `vets-api`
+  - A new controller (`medical_copays`) will be introduced to support mobile app copayment data requests
 - Are you deprecating or removing any APIs?
+  - Eventually `pay.va.gov` will be deprecated in favor of `pay.gov` in regards to payments but no clear timeline has been provided
 - Do you have API documentation?
+  - Yes, [here](https://department-of-veterans-affairs.github.io/va-mobile-app/api/) and for vets-api [here](https://github.com/department-of-veterans-affairs/vets-api/blob/master/README.md)
+  - The documentation will be updated after the new medical copayment endpoint is added
 - Describe expected call patterns
+  - API calls will follow standard REST request patterns, triggered when users navigate to relevant screens in the mobile app (debt overview, debt details, copayments, etc.)
 
 ## External API changes
 - List new or modified APIs for upstream or external systems
+  - None
 - Describe expected call patterns
+  - They'll follow the standard synchronous request-response API calls to existing external APIs
 - What PII or PHI will be transmitted to/from the external systems?
+  - Veteran identifiers (like a veterans UUID) will be transmitted securely, consistent with existing patterns in vets-api. All sensitive data handling practices already in place will continue to be followed
 
 ## Background jobs
 - List any required background processing
+  - None
 - Describe error and dead letter handling
+  - N/A
 
 ## Data storage
 - Describe new or modified databases, tables or columns
+  - No new or modified database structures will be introduced
 - Describe indexes and constraints
+  - N/A
 - Identify PII and PHI and where and how it will be stored, processed, expired and deleted
+  - No new storage of PII or PHI is introduced. Existing vets-api standards and patterns for secure handling of sensitive data continue to apply
 
 ## Libraries and dependencies
 - No new libraries/dependencies are expected to be added
