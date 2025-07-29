@@ -1,9 +1,4 @@
 ```mermaid
----
-config:
-  theme: base
-  look: neo
----
 sequenceDiagram
     actor User
     participant Browser
