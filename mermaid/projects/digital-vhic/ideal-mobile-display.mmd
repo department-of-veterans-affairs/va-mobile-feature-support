@@ -1,0 +1,53 @@
+flowchart TD
+    Start([Veteran Opens VA Mobile App]) --> Auth{Authenticated?}
+    
+    Auth -->|No| Login[Initiate Login Process]
+    Login --> AuthSuccess{Login Successful?}
+    AuthSuccess -->|No| AuthError[Display Authentication Error]
+    AuthError --> End1([End])
+    AuthSuccess -->|Yes| NavToVHIC
+    
+    Auth -->|Yes| NavToVHIC[Navigate to VHIC Section]
+    
+    NavToVHIC --> APICall[Call Vets-API: GET /digital_vhic]
+    APICall --> APIResponse{API Response}
+    
+    APIResponse -->|No Card Found| NoCard[Display No Digital VHIC Card Found]
+    NoCard --> RequestCard[Show Request Digital VHIC Button]
+    RequestCard --> RedirectVHIC[Redirect to VHIC Self Service Portal]
+    RedirectVHIC --> End2([End])
+    
+    APIResponse -->|Card Data Returned| DisplayCard[Display Digital VHIC Card]
+    DisplayCard --> CardActions[Show Card Actions]
+    
+    CardActions --> WalletOption[Add to Wallet Option]
+    CardActions --> RefreshOption[Refresh Card Option]
+    
+    WalletOption --> AddWallet{Add to Wallet Selected?}
+    AddWallet -->|Yes| WalletFlow[Initiate Wallet Integration]
+    WalletFlow --> WalletSuccess{Wallet Add Successful?}
+    WalletSuccess -->|Yes| WalletConfirm[Show Added to Wallet Confirmation]
+    WalletSuccess -->|No| WalletError[Show Failed to Add to Wallet Error]
+    WalletConfirm --> End3([End])
+    WalletError --> End4([End])
+    
+    AddWallet -->|No| End5([End])
+    RefreshOption --> APICall
+    
+    APIResponse -->|API Error| APIError[Tailored Error Path with Actionable Options<br/>Similar to Veteran Status Card]
+    APIError --> RetryOption[Contextual Action Button<br/>Based on Type of Error]
+    RetryOption --> APICall
+    
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px  
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef error fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef success fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    classDef api fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    
+    class Start,End1,End2,End3,End4,End5 startEnd
+    class Login,NavToVHIC,DisplayCard,CardActions,WalletFlow process
+    class Auth,AuthSuccess,APIResponse,AddWallet,WalletSuccess decision
+    class AuthError,NoCard,WalletError,APIError error
+    class WalletConfirm success
+    class APICall,RetryOption api

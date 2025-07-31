@@ -1,0 +1,38 @@
+sequenceDiagram
+    participant V as Veteran
+    participant VHIC as VHIC Service
+    participant VetsAPI as Vets-API
+    participant VANotify as Vets-API<br/>VA Notify Service
+
+    Note over V, VHIC: Veteran requests digital VHIC card<br/>via VHIC Self Service Portal
+
+    V->>VHIC: Request Digital VHIC Card
+    VHIC->>VHIC: Validate Eligibility & Process Request
+    
+    Note over VHIC, VetsAPI: Simplified integration:<br/>Single API call to vets-api
+
+    VHIC->>VetsAPI: Create Digital VHIC Card
+    Note right of VetsAPI: Request includes:<br/>- Card ID<br/>- Veteran ICN<br/>- Card Data<br/>- Metadata
+    
+    VetsAPI->>VetsAPI: Store Card Data in Database
+    
+    alt Storage Successful
+        VetsAPI-->>VHIC: Return Success Response with Card ID
+        Note left of VetsAPI: Confirm card stored<br/>and ready for display
+        
+        VetsAPI->>VANotify: Send Success Notification
+        Note right of VANotify: Leverages existing<br/>VA Notify integration
+        
+        VANotify->>V: Send Email/Text Notification
+        Note over V: "Your digital VHIC card<br/>is now available in the<br/>VA mobile app"
+        
+    else Storage Failed
+        VetsAPI-->>VHIC: Return Error Response
+        Note left of VetsAPI: Failed to store card data<br/>or validation error
+        
+        VetsAPI->>VANotify: Send Error Notification
+        VANotify->>V: Send Error Notification
+        Note over V: "There was an issue<br/>creating your digital card.<br/>Please try again later."
+    end
+
+    Note over V, VetsAPI: Card is now available via<br/>standard vets-api endpoints

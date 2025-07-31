@@ -1,0 +1,40 @@
+sequenceDiagram
+    participant V as Veteran
+    participant VHIC as VHIC Service
+    participant Mobile as VA Mobile App
+    participant Store as Local Data Store
+    participant Notify as VA Notify
+
+    Note over V, VHIC: Veteran requests digital VHIC card<br/>via VHIC Self Service Portal
+
+    V->>VHIC: Request Digital VHIC Card
+    VHIC->>VHIC: Validate Eligibility & Process Request
+    
+    Note over VHIC, Mobile: VHIC Service notifies Mobile App<br/>of card creation
+
+    VHIC->>Mobile: Send Digital VHIC Card Creation Request
+    Note right of Mobile: Request includes:<br/>- Card ID<br/>- Veteran ICN<br/>- Card Data
+    
+    Mobile->>Store: Store Card ID & Metadata
+    Store-->>Mobile: Storage Confirmation
+    
+    alt Storage Successful
+        Mobile-->>VHIC: Return ACK with Card ID
+        Note left of Mobile: Acknowledge receipt<br/>and storage of card
+        
+        Mobile->>Notify: Initiate Success Notification
+        Note right of Notify: Send notification to veteran<br/>about card availability
+        
+        Notify->>V: Send Email/Text Notification
+        Note over V: "Your digital VHIC card<br/>is now available in the<br/>VA mobile app"
+        
+    else Storage Failed
+        Mobile-->>VHIC: Return Error Response
+        Note left of Mobile: Failed to store card data
+        
+        Mobile->>Notify: Initiate Error Notification
+        Notify->>V: Send Error Notification
+        Note over V: "There was an issue<br/>creating your digital card"
+    end
+
+    Note over V, Mobile: Card is now available<br/>for display in mobile app
