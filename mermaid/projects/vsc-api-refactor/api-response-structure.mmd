@@ -1,0 +1,65 @@
+graph TD
+    subgraph "New API Response Structure"
+        WEB_API[Web veteranStatusCard API] --> VSC_SERVICE[Veteran Status Card Service]
+        MOBILE_API[Mobile veteranStatusCard API] --> VSC_SERVICE
+        VSC_SERVICE --> RESPONSE{Response Type}
+        
+        RESPONSE -->|Success| SUCCESS[Success Response]
+        RESPONSE -->|Warning| WARNING[Warning Response]
+        RESPONSE -->|Error| ERROR[Error Response]
+        
+        SUCCESS --> SUCCESS_STRUCT["{<br/>  status: 'success',<br/>  data: {<br/>    displayType: 'verified',<br/>    branch: 'Army',<br/>    serviceYears: '2010-2018'<br/>  },<br/>  ui: {<br/>    title: 'Verified Veteran',<br/>    description: 'Your status is confirmed',<br/>    actionButton: null<br/>  }<br/>}"]
+        
+        WARNING --> WARNING_STRUCT["{<br/>  status: 'warning',<br/>  data: {<br/>    displayType: 'pending',<br/>    branch: 'Army',<br/>    serviceYears: '2010-2018'<br/>  },<br/>  ui: {<br/>    title: 'Verification Pending',<br/>    description: 'Additional docs needed',<br/>    actionButton: {<br/>      text: 'Upload Documents',<br/>      action: 'upload'<br/>    }<br/>  },<br/>  message: 'Please upload DD214'<br/>}"]
+        
+        ERROR --> ERROR_STRUCT["{<br/>  status: 'error',<br/>  data: {<br/>    displayType: 'unavailable',<br/>    branch: null,<br/>    serviceYears: null<br/>  },<br/>  ui: {<br/>    title: 'Service Unavailable',<br/>    description: 'Try again later',<br/>    actionButton: {<br/>      text: 'Retry',<br/>      action: 'retry'<br/>    }<br/>  },<br/>  message: 'System temporarily unavailable'<br/>}"]
+    end
+    
+    subgraph "Frontend Implementation"
+        SUCCESS_STRUCT --> WEB_SUCCESS[Web: Display Success Card]
+        WARNING_STRUCT --> WEB_WARNING[Web: Display Warning Card]
+        ERROR_STRUCT --> WEB_ERROR[Web: Display Error Card]
+        
+        SUCCESS_STRUCT --> MOBILE_SUCCESS[Mobile: Display Success Card]
+        WARNING_STRUCT --> MOBILE_WARNING[Mobile: Display Warning Card]
+        ERROR_STRUCT --> MOBILE_ERROR[Mobile: Display Error Card]
+    end
+    
+    subgraph "Key Benefits"
+        BENEFIT1[UI-Ready Data<br/>No Frontend Computation]
+        BENEFIT2[Consistent Messaging<br/>Across Platforms]
+        BENEFIT3[Standardized Actions<br/>Unified Behavior]
+        BENEFIT4[Easy Maintenance<br/>Backend-Driven Changes]
+    end
+    
+    subgraph "Response Components"
+        COMP1[Status: success, warning, or error]
+        COMP2[Data: Core veteran information]
+        COMP3[UI: Display configuration]
+        COMP4[Message: User-facing text]
+    end
+    
+    SUCCESS_STRUCT -.-> BENEFIT1
+    WARNING_STRUCT -.-> BENEFIT2
+    ERROR_STRUCT -.-> BENEFIT3
+    WEB_SUCCESS -.-> BENEFIT4
+    MOBILE_SUCCESS -.-> BENEFIT4
+    
+    SUCCESS_STRUCT -.-> COMP1
+    SUCCESS_STRUCT -.-> COMP2
+    SUCCESS_STRUCT -.-> COMP3
+    WARNING_STRUCT -.-> COMP4
+    
+    style WEB_API fill:#4caf50
+    style MOBILE_API fill:#4caf50
+    style VSC_SERVICE fill:#4caf50
+    style SUCCESS fill:#4caf50
+    style WARNING fill:#ff9800
+    style ERROR fill:#f44336
+    style SUCCESS_STRUCT fill:#e8f5e8
+    style WARNING_STRUCT fill:#fff3e0
+    style ERROR_STRUCT fill:#ffebee
+    style BENEFIT1 fill:#e8f5e8
+    style BENEFIT2 fill:#e8f5e8
+    style BENEFIT3 fill:#e8f5e8
+    style BENEFIT4 fill:#e8f5e8

@@ -1,0 +1,42 @@
+{
+  "format": "png",
+  "theme": "va-custom",
+  "width": 2400,
+  "height": 1600,
+  "backgroundColor": "white",
+  "puppeteerConfig": {
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  },
+  "customThemes": {
+    "va-custom": {
+      "theme": "base",
+      "themeVariables": {
+        "primaryColor": "#005ea2",
+        "primaryTextColor": "#1b1b1b",
+        "primaryBorderColor": "#1a4480",
+        "secondaryColor": "#00bde3",
+        "secondaryTextColor": "#1b1b1b",
+        "tertiaryColor": "#d9e8f6",
+        "background": "#ffffff",
+        "mainBkg": "#ffffff",
+        "secondaryBkg": "#f0f0f0",
+        "tertiaryBkg": "#e7f6f8",
+        "lineColor": "#565c65",
+        "textColor": "#1b1b1b",
+        "fontFamily": "Source Sans Pro Web, Source Sans Pro, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif",
+        "fontSize": "14px",
+        "errorBkgColor": "#f4e3db",
+        "errorTextColor": "#d54309",
+        "warningBkgColor": "#faf3d1",
+        "warningTextColor": "#936f38",
+        "infoBkgColor": "#e7f6f8",
+        "infoTextColor": "#2e6276",
+        "successBkgColor": "#ecf3ec",
+        "successTextColor": "#216e1f"
+      }
+    }
+  }
+}
