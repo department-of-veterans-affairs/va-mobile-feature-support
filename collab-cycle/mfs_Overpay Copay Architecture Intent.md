@@ -9,7 +9,7 @@
 - [Link](https://github.com/department-of-veterans-affairs/va.gov-team/issues/109407) to Collaboration Cycle Request issue
 
 ## UX Design Description
-- For user-facing changes, link to UX prototype or wireframes if available
+- Link to [UX prototype](https://www.figma.com/proto/kRA7JHbthNrSLxTQHrzH8T/MFS---Overpayments---Copays-%7C-VA-Mobile?page-id=2001%3A429&node-id=7372-28070&p=f&viewport=5509%2C774%2C0.13&t=SY3zHNrIPef78j9o-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=7372%3A28070&show-proto-sidebar=1) (This includes the option for Veteran's make a payment on their Overpayment debt or Copayment bill.
 - Call out any engineering challenges; UX is reviewed in the [Design Intent meeting][DI]
 
 ## Frontend changes
