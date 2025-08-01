@@ -17,8 +17,14 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - Call out any engineering challenges; UX is reviewed in the [Design Intent meeting][DI]
 ## Frontend changes
 - Identify any significant code changes
+  - Implement platform-specific "Add to Wallet" buttons for Apple and Google Wallet
+  - Fetch and handle digital wallet passes (.pkpass for Apple, JWT/URL for Google) from backend APIs
+  - Handling user permissions and errors
 - Identify any new design system components needed or changes to current components
+  - No new custom components required
+  - Use officially branded Apple Wallet and Google Wallet buttons per platform guidelines
 - Describe any product analytics being gathered
+  - We want analytics to track when a user adds the VSC to their wallet for both iOS and Android platforms
 ## Backend changes
 - Does the project introduce any new or unusual infrastructure dependencies?
 - Do you need to poll any APIs for status?
@@ -40,7 +46,7 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - Describe indexes and constraints
 - Identify PII and PHI and where and how it will be stored, processed, expired and deleted
 ## Libraries and dependencies
-- List new or updated dependencies
+- `react-native-wallet-pass`: React Native module to handle PassKit pass
 ## Metrics, logging, observability, alerting
 - Identify key areas to monitor
 ## Infrastructure and network changes
