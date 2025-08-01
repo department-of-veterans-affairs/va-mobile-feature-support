@@ -24,9 +24,7 @@ Some of the items below may not apply to your work--that's okay.  You may not be
   - No new custom components required
   - Use officially branded Apple Wallet and Google Wallet buttons per platform guidelines
 - Describe any product analytics being gathered
-  - `wallet_add_attempt`: User initiates adding VSC.
-  - `wallet_add_success`: VSC successfully added.
-  - `wallet_add_failure`: Failed to add VSC (including failure reason).
+  - We want analytics to track when a user adds the VSC to their wallet for both iOS and Android platforms
 ## Backend changes
 - Does the project introduce any new or unusual infrastructure dependencies?
 - Do you need to poll any APIs for status?
