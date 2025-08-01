@@ -43,6 +43,8 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - List new or updated dependencies
 ## Metrics, logging, observability, alerting
 - Identify key areas to monitor
+  - Total number of downloads of the Veteran Status Card to add the card to an Apple Wallet
+  - Total number of downloads of the Veteran Status Card to add the card to a Google Wallet
 ## Infrastructure and network changes
 - List any changes or additions
 ## Test strategy
