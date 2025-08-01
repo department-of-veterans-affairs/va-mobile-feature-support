@@ -47,14 +47,24 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - List any changes or additions
 ## Test strategy
 - Describe automated, manual and user acceptance test strategy
+  - Unit tests and end-to-end tests for testing "Add to Wallet" flow on frontend
+  - Manual testing will involve testers on physical Android and iOS devices verifying that they can add passes to their wallets from the VA mobile app
 - Describe required test data and test user accounts
+  - Any user who has a VSC can be used to test this feature
 ## Rollout plan
 - List scope of any feature flags
+  - We plan to use a feature flag for this work and enabling it when the time comes
+  - If there are any issues with the feature then we can disable the flag
 - Identify other teams to coordinate with
+  - Likely working with VA Notify for work relating to push notifications (iOS only)
 - Describe rollback plan
+  - We can turn off the feature flag if need be which would hide the "Add to Wallet" button
 ## Internal administration tasks
 - What maintenance or administration tasks do you anticipate will need to be performed periodically?
+  - Apple Pass Type ID `.p12`: renew annually and update on the server.  
+  - Google service-account key: rotate per security policy. 
 - Describe how you intend for these tasks to be performed (e.g., through an internal web page, through terminal access, etc.).
+  - Perform certificate and key rotations through the Apple Developer Portal and Google Cloud Console
 ## Security
 - What questions do you have regarding items on the [security checklist](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/collab-cycle/architecture-intent-meeting.md#security-checklist)?
 - Are there any other security concerns about your project that you want to discuss?
