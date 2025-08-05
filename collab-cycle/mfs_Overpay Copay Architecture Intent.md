@@ -121,3 +121,42 @@
   - None
 - What [threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) have you done, and how did the results influence your planned architecture?
   - N/A
+ 
+## Artifacts
+Please provide the following documentation as attachments.
+- Architecture Diagram:
+This diagram must go beyond simple boxes and lines. It must clearly indicate which portions of the architecture are within the scope of the review, which portions are dependencies within the product, and which portions are external dependencies.
+This diagram must also illustrate the following specifics.
+  - Which implementation of security approaches were considered along with the approach that was chosen and why?
+  - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
+- Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
+    - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
+- Sequence Diagram:
+This diagram must include any authentication steps if this is an authenticated experience.
+- Data Flow Diagram:
+This diagram must illustrate the following specifics.
+  - What data is collected or used, and where, including information such as credentials used by this system?
+  - Where is the data is stored and how, including information such as any encryption used?
+  - How is the data transferred, including information such as any encryption used?
+  - Who accesses the data and in what capacity (read or read-write)?
+  - What is the audit trail of data access and manipulation?
+- API Endpoint Documentation:
+This may include a link to a Swagger/OpenAPI document. Any new API endpoints introduced by this product or feature must be explicitly identified.
+- Product Specifics:
+    - A link to the Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
+    - A link to the Product Outline
+    - Ensure Product Outline contains Incident Response info, including:
+        - Points of contact for your system and dependent VA back-ends
+        - Links to dashboards that help identify and debug application issues
+    - Is there a playbook included in your product outline, for investigating and handling likely failure modes? If so, link to your Product Playbook
+## Where to put this checklist and what to name it
+
+This document should be in markdown and should be shared in this location:
+[va.gov-team-sensitive/tree/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/tree/master/platform/engineering/collaboration-cycle/architecture-intent/checklist)
+
+Name the file in the following format:
+[team]-[application]-[date]
+
+Team and application should match your Collab Cycle Request ticket (so we know who you are). Date should be supplied in the format MMDDYYYY. All Collab Cycle Request tickets can be found in the [Collaboration Cycle Reviews GH project](https://github.com/orgs/department-of-veterans-affairs/projects/998/views/1). 
+
+Once you've dropped this checklist into this folder, please update your Collab Cycle Request ticket with the location as well as a link to your user data flow document.
