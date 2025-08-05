@@ -121,6 +121,36 @@
   - None
 - What [threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) have you done, and how did the results influence your planned architecture?
   - N/A
+
+## Security Checklist
+### Questions to be Answered
+
+The following product or feature descriptions may be answered with a reference link to the team’s documentation. However, the provided links must be specific to the request.
+- Please describe what problem this product or feature solves.
+- Please describe a plan to monitor this code base after deployment, including the following scenarios (NOTE: If you don't (yet) have such a plan, or don't know how to get started with one, we can work on this with you!).
+  - The code base is compromised at source- or run-time.
+    - How does the code base get disabled in the product?
+    - How would you detect a compromise?
+    - What process and privilege does the code base execute under?
+        - If so, is that process isolated?
+        - If so, what additional credentials are available to that process?
+    - The code base is infiltrated or ex-filtrated.
+  - Links to dashboards that help identify and debug application issues
+- Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
+- Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
+- Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
+- Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
+    - Is the PHI strongly encrypted?
+    - Is the PII encrypted?
+    - Can the sensitive information be scrubbed?
+- Are there any new, modified, or existing Cookies being used?
+    - If so, are there any new Cookies?
+        - If so, why can’t the existing Cookies be used?
+    - If so, are there any modified Cookies?
+        - If so, how are the Cookies modified?
+    - If so, are there any existing Cookies?
+- Is this feature authenticated or unauthenticated?
+- Are there any other specific subjects that you want to highlight or focus additional attention on?
  
 ## Artifacts
 Please provide the following documentation as attachments.
