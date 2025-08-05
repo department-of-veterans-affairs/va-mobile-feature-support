@@ -19,6 +19,7 @@
   - Integration of new backend API endpoints (e.g., [new medical_copays controller](https://github.com/department-of-veterans-affairs/va-mobile-feature-support/issues/402#issuecomment-2847360826))
 - Identify any new design system components needed or changes to current components:
   - If the team decides we want to include integrated payments, we anticipate creating a new action sheet/menu component within the app. This component would initially not be part of the design system library, though it may be integrated into it later if successful and approved by VA UX standards. No other components are expected.
+- **Does this update change shared code?**
 - Describe any product analytics being gathered:
   - Page view events (overpayment & copayment debt screens)
   - Interaction events for external payment links (pay.va.gov & pay.gov)
@@ -27,10 +28,15 @@
 ## Backend changes
 - Does the project introduce any new or unusual infrastructure dependencies?
   - No, the mobile backend will use existing infrastructure and patterns already established in vets-api
+- **Does the project introduce any new connections or exchanges of new information types with other systems? (e.g. "new" meaning a new connection of type of information not already present in `vets-api`)**
 - Do you need to poll any APIs for status?
   - No, APIs involved will use standard request-response patterns
 - Are you handling all failure and error cases while in custody of your users's data?
   - Yes, standard error handling and logging patterns in vets-api will be implemented. We will handle API failures gracefully, providing clear error messages to the frontend and logging detailed error information for debugging purposes
+- **Does this update change shared code?**
+- **What information will be captured in logs or metrics?**
+- **Does this project/update involve user-uploaded data? Are user-uploaded files being scanned for viruses?**
+- **Does this project/update generate intermediate or "temporary" files during processing? If so, where and how are the temporary files materialized? What is the cleanup/removal process or mechanism?**
 
 ## Internal API changes
 - List new or modified APIs in `vets-api`
@@ -42,6 +48,10 @@
   - The documentation will be updated after the new medical copayment endpoint is added
 - Describe expected call patterns
   - API calls will follow standard REST request patterns, triggered when users navigate to relevant screens in the mobile app (debt overview, debt details, copayments, etc.)
+- **Are there new endpoints or services that require rate limiting or throttling?**
+- **Are there any third party integrations, and how are they vetted?**
+- **Are there any new scheduled/cron jobs? If so, how are their intervals and impact considered? (especially with regard to periods of higher traffic or times when Sidekiq and infrastructure is already handling a high volume of jobs?)**
+- **Is schema validation enforced (ex: using the vets-json-schema repo)?**
 
 ## External API changes
 - List new or modified APIs for upstream or external systems
@@ -64,6 +74,9 @@
   - N/A
 - Identify PII and PHI and where and how it will be stored, processed, expired and deleted
   - No new storage of PII or PHI is introduced. Existing vets-api standards and patterns for secure handling of sensitive data continue to apply
+- **Is this change introducing a large or new volume of data?**
+- **Do these changes impact database or caching layers (ex: Redis, Postgres)? Do the changes have implications for data volume, memory, or CPU usage to consider?**
+- **Does this project/update expect to persist information? What is the expiration policy for data added to the system? What is the cleanup/removal process or mechanism?**
 
 ## Libraries and dependencies
 - No new libraries/dependencies are expected to be added
@@ -72,6 +85,8 @@
 - Identify key areas to monitor
   - Key areas to monitor for the user include screen views, statement downloads, and url navigation to pay.gov with Firebase/Google Analytics
   - Success and errors through the API will be tracked and alerted through datadog and linked to an alert slack channel
+- **Are you introducing any custom metric tags? Have you considered their cost and potential cardinality? High cardinality = higher cost**
+- **Are there any sensitive data risks with logging?**
 
 ## Infrastructure and network changes
 - List any changes or additions
