@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant U as User
+    participant API as API Gateway
+    participant Auth as Auth Service
+    participant DB as Database
+    
+    U->>API: Request with Token
+    API->>Auth: Validate Token
+    Auth-->>API: Token Valid
+    API->>DB: Query Data
+    DB-->>API: Return Results
+    API-->>U: Response with Data
+    
+    Note over U,DB: Happy Path Flow
+    
+    U->>API: Request with Invalid Token
+    API->>Auth: Validate Token
+    Auth-->>API: Token Invalid
+    API-->>U: 401 Unauthorized
+    
+    Note over U,API: Error Path Flow
