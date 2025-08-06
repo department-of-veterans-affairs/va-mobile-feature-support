@@ -127,7 +127,10 @@
 
 The following product or feature descriptions may be answered with a reference link to the team’s documentation. However, the provided links must be specific to the request.
 - Please describe what problem this product or feature solves.
-  - (Natalie to complete)
+  - Currently, within the mobile app, a Veteran cannot access any information about how much they owe for Benefit Overpayment Debt or Copayment bills. This feature will allow Veterans to view the total amount they owe for those respective debts on the app. This information is available on VA.gov within the Debt Portal. 
+  - This feature would be added within the Payments tab, and if a Veteran has either Overpayments or Copayments, they would see the amount of money owed and how many outstanding debts/bills they have.
+  - As part of the MVP, we could allow for Veterans to take action on their debts/bills. These actions include resolving the debt, which would take them directly out of the app and to pay.gov (for copayments) and pay.va.gov (for overpayments). Veterans can also dispute charges and request assistance from the VA due to financial hardship, with both actions linking them to the appropriate resources within VA.gov. At this time, we are conducting user testing sessions to see how users interact with these interactions and will then decide if we will incorporate them into MVP. 
+  - The MFS team is working with the Financial Management Team on this initiative. 
 - Please describe a plan to monitor this code base after deployment, including the following scenarios (NOTE: If you don't (yet) have such a plan, or don't know how to get started with one, we can work on this with you!).
   - The code base is compromised at source- or run-time.
     - How does the code base get disabled in the product?
@@ -141,7 +144,10 @@ The following product or feature descriptions may be answered with a reference l
   - Links to dashboards that help identify and debug application issues
     - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
-  - (Natalie to complete)
+  - Releasing on the mobile app is different than releasing to VA.gov. On the mobile app, releases occur every two weeks on Tuesdays. You can find the release schedule [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/) and information about the release process [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/release-process).
+  - Releases are not a slow rollout to only a percentage of users, but rather the release is to 100% of users.
+  - All releases are behind a feature flag, so if a bug is discovered, we can turn off the feature flag.
+  - For mobile releases we do not create a release plan since we do not have a Phase I or Phase II, we simply Go Live.   
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
   - We are adding a new `medical_copays` endpoint in vets-api. In order to make a request to this endpoint the veteran needs to be authenticated by being logged in to the mobile app.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
@@ -163,7 +169,9 @@ This diagram must also illustrate the following specifics.
   - Which implementation of security approaches were considered along with the approach that was chosen and why?
   - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
 - Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
+  - The IIR team (with support from the MFS team) will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C05RJS5DANT). The plan for fixing and timeline will depend on the specific nature of the problem, but we are a full-time contract and expect to be able to address issues promptly.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
+      - We’ll triage and develop a solution immediately, then test and deploy the fix (typically within 72 hours), with stakeholders notified as soon as it’s live. 
 - Sequence Diagram:
 This diagram must include any authentication steps if this is an authenticated experience.
 - Data Flow Diagram:
@@ -177,7 +185,8 @@ This diagram must illustrate the following specifics.
 This may include a link to a Swagger/OpenAPI document. Any new API endpoints introduced by this product or feature must be explicitly identified.
 - Product Specifics:
     - A link to the Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
-    - A link to the Product Outline
+      - A release plan is not applicable for mobile releases. Please refer to the comment in the Security Checklist section.   
+    - A [link](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/products/combined_va_debt_portal/mobile/Overpayment%20and%20Copayment%20Debts%20Product%20Brief.md) to the Product Outline
     - Ensure Product Outline contains Incident Response info, including:
         - Points of contact for your system and dependent VA back-ends
         - Links to dashboards that help identify and debug application issues
