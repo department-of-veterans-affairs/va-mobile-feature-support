@@ -172,6 +172,7 @@ This diagram must illustrate the following specifics.
   - What is the audit trail of data access and manipulation?
 - API Endpoint Documentation:
 This may include a link to a Swagger/OpenAPI document. Any new API endpoints introduced by this product or feature must be explicitly identified.
+  - We will be adding a new endpoint `/medical_copays` to the mobile api. It is currently in development and documentation will be noted once that work is completed.
 - Product Specifics:
     - A link to the Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
     - A link to the Product Outline
