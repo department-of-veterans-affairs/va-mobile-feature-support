@@ -127,30 +127,33 @@
 
 The following product or feature descriptions may be answered with a reference link to the team’s documentation. However, the provided links must be specific to the request.
 - Please describe what problem this product or feature solves.
+  - (Natalie to complete)
 - Please describe a plan to monitor this code base after deployment, including the following scenarios (NOTE: If you don't (yet) have such a plan, or don't know how to get started with one, we can work on this with you!).
   - The code base is compromised at source- or run-time.
     - How does the code base get disabled in the product?
+      - We gate the Overpay Copay feature behind a feature flag that can be toggled off at any time.
     - How would you detect a compromise?
+      - We’ll watch for unusual error-rate spikes in Sentry and metric anomalies in DataDog.
     - What process and privilege does the code base execute under?
-        - If so, is that process isolated?
-        - If so, what additional credentials are available to that process?
+      - No plan at this time
     - The code base is infiltrated or ex-filtrated.
+      - No plan at this time
   - Links to dashboards that help identify and debug application issues
+    - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
+  - (Natalie to complete)
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
+  - We are adding a new `medical_copays` endpoint in vets-api. In order to make a request to this endpoint the veteran needs to be authenticated by being logged in to the mobile app.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
+  - We will log pageview events, interaction evens with payment links for pay.gov and pay.va.gov as well as overall app volume. This data will be stored in Google analytics.
 - Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
-    - Is the PHI strongly encrypted?
-    - Is the PII encrypted?
-    - Can the sensitive information be scrubbed?
+  - No PII/PHI being captured
 - Are there any new, modified, or existing Cookies being used?
-    - If so, are there any new Cookies?
-        - If so, why can’t the existing Cookies be used?
-    - If so, are there any modified Cookies?
-        - If so, how are the Cookies modified?
-    - If so, are there any existing Cookies?
+  - No new, modified or existing Cookies being added
 - Is this feature authenticated or unauthenticated?
+  - Authenticated
 - Are there any other specific subjects that you want to highlight or focus additional attention on?
+ - None
  
 ## Artifacts
 Please provide the following documentation as attachments.
