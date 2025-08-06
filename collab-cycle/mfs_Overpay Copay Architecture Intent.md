@@ -157,8 +157,11 @@ Please provide the following documentation as attachments.
 - Architecture Diagram:
 This diagram must go beyond simple boxes and lines. It must clearly indicate which portions of the architecture are within the scope of the review, which portions are dependencies within the product, and which portions are external dependencies.
 This diagram must also illustrate the following specifics.
+  - [Link to Architecture Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-architecture-diagram-20250806.md)
   - Which implementation of security approaches were considered along with the approach that was chosen and why?
+    - The implementation uses existing security approaches to authenticate users and connect to the VA network.
   - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
+    - No new libraries or components will be utilized.
 - Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
 - Sequence Diagram:
