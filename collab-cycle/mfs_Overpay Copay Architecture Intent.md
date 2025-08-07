@@ -140,7 +140,7 @@ The following product or feature descriptions may be answered with a reference l
     - What process and privilege does the code base execute under?
       - No plan at this time
     - The code base is infiltrated or ex-filtrated.
-      - The code repository is public access but the write priviledges are managed by the VA.
+      - The code repository is public access but the write privileges are managed by the VA.
   - Links to dashboards that help identify and debug application issues
     - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
