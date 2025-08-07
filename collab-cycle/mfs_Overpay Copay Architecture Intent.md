@@ -134,31 +134,33 @@ The following product or feature descriptions may be answered with a reference l
 - Please describe a plan to monitor this code base after deployment, including the following scenarios (NOTE: If you don't (yet) have such a plan, or don't know how to get started with one, we can work on this with you!).
   - The code base is compromised at source- or run-time.
     - How does the code base get disabled in the product?
+      - We gate the Overpay Copay feature behind a feature flag that can be toggled off at any time.
     - How would you detect a compromise?
+      - We’ll watch for unusual error-rate spikes in Sentry and metric anomalies in DataDog.
     - What process and privilege does the code base execute under?
-        - If so, is that process isolated?
-        - If so, what additional credentials are available to that process?
+      - No plan at this time
     - The code base is infiltrated or ex-filtrated.
+      - The code repository is public access but the write privileges are managed by the VA.
   - Links to dashboards that help identify and debug application issues
+    - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
   - Releasing on the mobile app is different than releasing to VA.gov. On the mobile app, releases occur every two weeks on Tuesdays. You can find the release schedule [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/) and information about the release process [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/release-process).
   - Releases are not a slow rollout to only a percentage of users, but rather the release is to 100% of users.
   - All releases are behind a feature flag, so if a bug is discovered, we can turn off the feature flag.
   - For mobile releases we do not create a release plan since we do not have a Phase I or Phase II, we simply Go Live.   
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
+  - We are adding a new `medical_copays` endpoint in vets-api. To prevent unauthorized access, only veterans logged in to the mobile app can call it.
+  - We’ll also introduce the `medical_copays/get_pdf_statement_by_id` endpoint for downloading copay statements, guarded by the same authentication checks.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
+  - We will log pageview events, interaction events with payment links for pay.gov and pay.va.gov as well as overall app volume. This data will be stored in Google analytics.
 - Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
-    - Is the PHI strongly encrypted?
-    - Is the PII encrypted?
-    - Can the sensitive information be scrubbed?
+  - No PII/PHI being captured
 - Are there any new, modified, or existing Cookies being used?
-    - If so, are there any new Cookies?
-        - If so, why can’t the existing Cookies be used?
-    - If so, are there any modified Cookies?
-        - If so, how are the Cookies modified?
-    - If so, are there any existing Cookies?
+  - No new, modified or existing Cookies being added
 - Is this feature authenticated or unauthenticated?
+  - Authenticated
 - Are there any other specific subjects that you want to highlight or focus additional attention on?
+  - None
  
 ## Artifacts
 Please provide the following documentation as attachments.
