@@ -185,7 +185,7 @@ This may include a link to a Swagger/OpenAPI document. Any new API endpoints int
 - Product Specifics:
     - A link to the Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
       - A release plan is not applicable for mobile releases. Please refer to the comment in the Security Checklist section.   
-    - A [link](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/products/combined_va_debt_portal/mobile/Overpayment%20and%20Copayment%20Debts%20Product%20Brief.md) to the Product Outline
+    - [Link](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/products/combined_va_debt_portal/mobile/Overpayment%20and%20Copayment%20Debts%20Product%20Brief.md) to the Product Outline
     - Ensure Product Outline contains Incident Response info, including:
         - Points of contact for your system and dependent VA back-ends
         - Links to dashboards that help identify and debug application issues
