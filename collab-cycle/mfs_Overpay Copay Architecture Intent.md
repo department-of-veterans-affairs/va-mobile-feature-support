@@ -140,7 +140,7 @@ The following product or feature descriptions may be answered with a reference l
     - What process and privilege does the code base execute under?
       - No plan at this time
     - The code base is infiltrated or ex-filtrated.
-      - No plan at this time
+      - The code repository is public access but the write priviledges are managed by the VA.
   - Links to dashboards that help identify and debug application issues
     - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
@@ -149,9 +149,10 @@ The following product or feature descriptions may be answered with a reference l
   - All releases are behind a feature flag, so if a bug is discovered, we can turn off the feature flag.
   - For mobile releases we do not create a release plan since we do not have a Phase I or Phase II, we simply Go Live.   
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
-  - We are adding a new `medical_copays` endpoint in vets-api. In order to make a request to this endpoint the veteran needs to be authenticated by being logged in to the mobile app.
+  - We are adding a new `medical_copays` endpoint in vets-api. To prevent unauthorized access, only veterans logged in to the mobile app can call it.
+  - We’ll also introduce the `medical_copays/get_pdf_statement_by_id` endpoint for downloading copay statements, guarded by the same authentication checks.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
-  - We will log pageview events, interaction evens with payment links for pay.gov and pay.va.gov as well as overall app volume. This data will be stored in Google analytics.
+  - We will log pageview events, interaction events with payment links for pay.gov and pay.va.gov as well as overall app volume. This data will be stored in Google analytics.
 - Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
   - No PII/PHI being captured
 - Are there any new, modified, or existing Cookies being used?
@@ -159,7 +160,7 @@ The following product or feature descriptions may be answered with a reference l
 - Is this feature authenticated or unauthenticated?
   - Authenticated
 - Are there any other specific subjects that you want to highlight or focus additional attention on?
- - None
+  - None
  
 ## Artifacts
 Please provide the following documentation as attachments.
