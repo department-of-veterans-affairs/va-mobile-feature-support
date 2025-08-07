@@ -190,6 +190,7 @@ This may include a link to a Swagger/OpenAPI document. Any new API endpoints int
         - Points of contact for your system and dependent VA back-ends
         - Links to dashboards that help identify and debug application issues
     - Is there a playbook included in your product outline, for investigating and handling likely failure modes? If so, link to your Product Playbook
+      - At this time we have not created this artifact since we have not set up specific monitors for the APIs that will be called for this feature. The Core Mobile team handles any errors within the VAHB app.  
 ## Where to put this checklist and what to name it
 
 This document should be in markdown and should be shared in this location:
