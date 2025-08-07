@@ -113,14 +113,7 @@
   - We do not anticipate introducing any new periodic maintenance or internal administrative tasks for this feature.
 - Describe how you intend for these tasks to be performed (e.g., through an internal web page, through terminal access, etc.).
   - N/A (no tasks expected)
-
-## Security
-- What questions do you have regarding items on the [security checklist](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/collab-cycle/architecture-intent-meeting.md#security-checklist)?
-  - None
-- Are there any other security concerns about your project that you want to discuss?
-  - None
-- What [threat modeling](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html) have you done, and how did the results influence your planned architecture?
-  - N/A
+  - 
 
 ## Security Checklist
 ### Questions to be Answered
@@ -170,7 +163,7 @@ This diagram must also illustrate the following specifics.
   - Which implementation of security approaches were considered along with the approach that was chosen and why?
   - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
 - Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
-  - The IIR team (with support from the MFS team) will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C05RJS5DANT). The plan for fixing and timeline will depend on the specific nature of the problem, but we are a full-time contract and expect to be able to address issues promptly.
+  - The FM team (with support from the MFS team) will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C05RJS5DANT). The plan for fixing and timeline will depend on the specific nature of the problem, but we are a full-time contract and expect to be able to address issues promptly.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
       - We’ll triage and develop a solution immediately, then test and deploy the fix (typically within 72 hours), with stakeholders notified as soon as it’s live. 
 - Sequence Diagram:
@@ -193,7 +186,7 @@ This may include a link to a Swagger/OpenAPI document. Any new API endpoints int
         - Points of contact for your system and dependent VA back-ends
         - Links to dashboards that help identify and debug application issues
     - Is there a playbook included in your product outline, for investigating and handling likely failure modes? If so, link to your Product Playbook
-      - At this time we have not created this artifact since we have not set up specific monitors for the APIs that will be called for this feature. The Core Mobile team handles any errors within the VAHB app and is monitored within the va-mobile-app-alerts.  
+      - At this time we have not created this artifact since we have not set up specific monitors for the APIs that will be called for this feature. We will work with the Financial Management team to figure out who will monitor the health of this feature within the mobile app. 
 ## Where to put this checklist and what to name it
 
 This document should be in markdown and should be shared in this location:
