@@ -108,7 +108,7 @@
   - No significant sensitive data risks. Logging will follow existing vets-api patterns that exclude PII/PHI from logs.
 
 ## Infrastructure and network changes
-- List any changes or additions
+- No new infrastructure or network changes will happen as part of this effort
 
 ## Test strategy
 - Describe automated, manual and user acceptance test strategy:
