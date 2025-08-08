@@ -105,7 +105,7 @@
     - Total number of clicks on links to access VA.gov for payments (tracked monthly)
     - Total number of clicks on empty state screens for benefit overpayments and medical copayments (tracked monthly for design assessment)
 - **Are there any sensitive data risks with logging?**
-  - No significant sensitive data risks. Logging will follow existing vets-api patterns that exclude PII/PHI from logs. Only non-sensitive identifiers and error information will be logged for debugging purposes.
+  - No significant sensitive data risks. Logging will follow existing vets-api patterns that exclude PII/PHI from logs.
 
 ## Infrastructure and network changes
 - List any changes or additions
