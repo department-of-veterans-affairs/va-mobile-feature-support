@@ -166,8 +166,8 @@ This diagram must also illustrate the following specifics.
   - The FM team (with support from the MFS team) will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C05RJS5DANT). The plan for fixing and timeline will depend on the specific nature of the problem, but we are a full-time contract and expect to be able to address issues promptly.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
       - We’ll triage and develop a solution immediately, then test and deploy the fix (typically within 72 hours), with stakeholders notified as soon as it’s live. 
-- Sequence Diagram:
-This diagram must include any authentication steps if this is an authenticated experience.
+- Sequence Diagram: This diagram must include any authentication steps if this is an authenticated experience.
+  - [Link to Sequence Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-sequence-diagram-20250808.md)
 - Data Flow Diagram:
 This diagram must illustrate the following specifics.
   - What data is collected or used, and where, including information such as credentials used by this system?
