@@ -61,7 +61,7 @@
 - **Are there any new scheduled/cron jobs? If so, how are their intervals and impact considered? (especially with regard to periods of higher traffic or times when Sidekiq and infrastructure is already handling a high volume of jobs?)**
   - No, this project does not introduce any new scheduled or cron jobs. All functionality is based on real-time API requests.
 - **Is schema validation enforced (ex: using the vets-json-schema repo)?**
-  - Yes, schema validation will be enforced following existing vets-api patterns using the vets-json-schema repository for API request/response validation.
+  - No we will not be submitting any data, parameter protection will utilize rails params.permit
 
 ## External API changes
 - List new or modified APIs for upstream or external systems
