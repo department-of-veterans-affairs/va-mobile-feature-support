@@ -104,6 +104,8 @@
     - Overall app volume after debt feature implementation (tracked monthly) 
     - Total number of clicks on links to access VA.gov for payments (tracked monthly)
     - Total number of clicks on empty state screens for benefit overpayments and medical copayments (tracked monthly for design assessment)
+    - Downloads of PDF copay statements
+    - Error alerts shown to the user
 - **Are there any sensitive data risks with logging?**
   - No significant sensitive data risks. Logging will follow existing vets-api patterns that exclude PII/PHI from logs.
 
