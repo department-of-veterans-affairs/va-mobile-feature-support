@@ -173,11 +173,17 @@ This diagram must also illustrate the following specifics.
   - [Link to Sequence Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-sequence-diagram-20250808.md)
 - Data Flow Diagram:
 This diagram must illustrate the following specifics.
+  - [Link to Data Flow Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-data-flow-diagram-20250808.md)
   - What data is collected or used, and where, including information such as credentials used by this system?
+    - The user's email and password are used to log into the mobile app.
   - Where is the data is stored and how, including information such as any encryption used?
+    - No data is stored.
   - How is the data transferred, including information such as any encryption used?
+    - All data is transferred via HTTPS.
   - Who accesses the data and in what capacity (read or read-write)?
+    - The mobile app user has access to the data in a read-only capacity.
   - What is the audit trail of data access and manipulation?
+    - No audit trail is generated and there is no manipulation.
 - API Endpoint Documentation:
 This may include a link to a Swagger/OpenAPI document. Any new API endpoints introduced by this product or feature must be explicitly identified.
   - We will be adding new endpoints `v0/medical_copays` and `/v0/medical_copays/get_pdf_statement_by_id/{id}` to the mobile api. It is currently in development and documentation will be noted once that work is completed.
