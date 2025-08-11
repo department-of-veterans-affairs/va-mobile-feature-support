@@ -89,32 +89,40 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - Describe how you intend for these tasks to be performed (e.g., through an internal web page, through terminal access, etc.).
   - Perform certificate and key rotations through the Apple Developer Portal and Google Cloud Console
 ## Security
-The following product or feature descriptions may be answered with a reference link to the team’s documentation. However, the provided links must be specific to the request.
+The following product or feature descriptions may be answered with a reference link to the team's documentation. However, the provided links must be specific to the request.
 - Please describe what problem this product or feature solves.
+  - Allowing a veteran to add their Veteran's Status Card from their VA mobile app to their Apple/Google wallet as a generic pass.
+  - We will add a platform-specific button titled "Add to Apple/Google Wallet" to the Veteran Status Card page.
 - Please describe a plan to monitor this code base after deployment, including the following scenarios (NOTE: If you don't (yet) have such a plan, or don't know how to get started with one, we can work on this with you!).
   - The code base is compromised at source- or run-time.
     - How does the code base get disabled in the product?
+      - We will hide it behind a feature flag, which can be toggled on/off whenever we choose
     - How would you detect a compromise?
+      - Monitor error rates and anomalies via Sentry/DataDog dashboards (5xx spikes, unexpected payloads).
+      - Veteran support tickets and direct feedback channels.
     - What process and privilege does the code base execute under?
-        - If so, is that process isolated?
-        - If so, what additional credentials are available to that process?
+      - No plan at this time
     - The code base is infiltrated or ex-filtrated.
+      - The code repository is public access but the write privileges are managed by the VA.
   - Links to dashboards that help identify and debug application issues
+    - Not built yet
 - Provide your Release Plan with the "Planning" sections completed (in each section: Phase I, Phase II, Go Live)
+  - Releasing on the mobile app is different than releasing to VA.gov. On the mobile app, releases occur every two weeks on Tuesdays. You can find the release schedule [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/) and information about the release process [here](https://department-of-veterans-affairs.github.io/va-mobile-app/docs/Operations/Releases/release-process).
+  - Releases are not a slow rollout to only a percentage of users, but rather the release is to 100% of users.
+  - All releases are behind a feature flag, so if a bug is discovered, we can turn off the feature flag.
+  - For mobile releases we do not create a release plan since we do not have a Phase I or Phase II, we simply Go Live. 
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
+  - No new mobile-facing endpoints; all API calls go through the PassKit/Google Wallet services.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
+  - We are logging new analytics such as how often the pass is added to the veteran's wallet. This will use our typical analytics and this data will live in our respective analytics dashboards
 - Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
-    - Is the PHI strongly encrypted?
-    - Is the PII encrypted?
-    - Can the sensitive information be scrubbed?
+  - We only store pass metadata (`serialNumber`, `authenticationToken`) and the Wallet-provided `deviceID/pushToken`.
 - Are there any new, modified, or existing Cookies being used?
-    - If so, are there any new Cookies?
-        - If so, why can’t the existing Cookies be used?
-    - If so, are there any modified Cookies?
-        - If so, how are the Cookies modified?
-    - If so, are there any existing Cookies?
+  - No new, modified, or existing Cookies are being used
 - Is this feature authenticated or unauthenticated?
+  - Authenticated
 - Are there any other specific subjects that you want to highlight or focus additional attention on?
+  - None
 
 ### Artifacts
 Please provide the following documentation as attachments.
