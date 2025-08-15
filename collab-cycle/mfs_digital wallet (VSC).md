@@ -71,7 +71,9 @@ Some of the items below may not apply to your work--that's okay.  You may not be
   - We would only log interaction events like number of downloads, no personal information will be logged
 ## Infrastructure and network changes
   - Apple: Implement PassKit web-service endpoints (register device, check updates, deliver pass) and serve a freshly signed `.pkpass`. Trigger silent updates via APNs when data changes.
-  - Apple: DB for pass metadata (`serialNumber`, `authenticationToken`, `deviceID`, `pushToken`).
+    - DB for pass metadata (`serialNumber`, `authenticationToken`, `deviceID`, `pushToken`).
+  - Google: Add backend service to create/update passes via **Google Wallet REST API**
+  - TBD: Depending on how we handle pass updates for both Apple and Google, additional services, queues, or triggers may be needed to detect data changes and initiate updates.
 ## Test strategy
 - Describe automated, manual and user acceptance test strategy
   - Unit tests and end-to-end tests for testing "Add to Wallet" flow on frontend
