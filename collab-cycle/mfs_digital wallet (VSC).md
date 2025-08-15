@@ -85,7 +85,8 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 ## Internal administration tasks
 - What maintenance or administration tasks do you anticipate will need to be performed periodically?
   - Apple Pass Type ID `.p12`: renew annually and update on the server.  
-  - Google service-account key: rotate per security policy. 
+  - Google service-account key: rotate per security policy.
+  - The Core Mobile team will be responsible for handling and rotating these credentials.
 - Describe how you intend for these tasks to be performed (e.g., through an internal web page, through terminal access, etc.).
   - Perform certificate and key rotations through the Apple Developer Portal and Google Cloud Console
 ## Security
@@ -101,7 +102,11 @@ The following product or feature descriptions may be answered with a reference l
       - Monitor error rates and anomalies via Sentry/DataDog dashboards (5xx spikes, unexpected payloads).
       - Veteran support tickets and direct feedback channels.
     - What process and privilege does the code base execute under?
-      - No plan at this time
+      - Read VSC data, sign Apple passes, call Apple/Google Wallet APIs, and write its own pass/registration records.
+      - If so, is that process isolated?
+        - Yes — it runs in isolation.
+      - If so, what additional credentials are available to that process?
+        - Apple and Google both require security credentials (certificates or service account keys). We’ll also need authentication to access Veteran data.
     - The code base is infiltrated or ex-filtrated.
       - The code repository is public access but the write privileges are managed by the VA.
   - Links to dashboards that help identify and debug application issues
@@ -112,7 +117,7 @@ The following product or feature descriptions may be answered with a reference l
   - All releases are behind a feature flag, so if a bug is discovered, we can turn off the feature flag.
   - For mobile releases we do not create a release plan since we do not have a Phase I or Phase II, we simply Go Live. 
 - Are there any new application endpoints, front- or back-end? If so, please give examples of how any of the endpoints could be abused by unauthorized parties, as well as a plan to mitigate such threats.
-  - No new mobile-facing endpoints; all API calls go through the PassKit/Google Wallet services.
+  - We will be adding new endpoints to fetch the wallet passes: `.pkpass` on iOS and `JWT` on Android.
 - Is there any new logging data being captured? If so, what data is being captured, how, and where is it stored?
   - We are logging new analytics such as how often the pass is added to the veteran's wallet. This will use our typical analytics and this data will live in our respective analytics dashboards
 - Is Personal Health Information/PHI, Personal Identifiable Information/PII, or any other Personal Information/PI being captured? If so, please answer the following questions:
