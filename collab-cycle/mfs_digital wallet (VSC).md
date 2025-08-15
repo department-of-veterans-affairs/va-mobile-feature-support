@@ -23,7 +23,8 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - Identify any new design system components needed or changes to current components
   - No new custom components required
   - Use officially branded Apple Wallet and Google Wallet buttons per platform guidelines
-- **Does this update change shared code?**
+- Does this update change shared code?
+  - No, it does not.
 - Describe any product analytics being gathered
   - We want analytics to track when a user adds the VSC to their wallet for both iOS and Android platforms
 ## Backend changes
@@ -64,10 +65,13 @@ Some of the items below may not apply to your work--that's okay.  You may not be
 - Identify key areas to monitor
   - Total number of downloads of the Veteran Status Card to add the card to an Apple Wallet
   - Total number of downloads of the Veteran Status Card to add the card to a Google Wallet
-- **Are you introducing any custom metric tags? Have you considered their cost and potential cardinality? High cardinality = higher cost**
-- **Are there any sensitive data risks with logging?**
+- Are you introducing any custom metric tags? Have you considered their cost and potential cardinality? High cardinality = higher cost
+  - No, we've not considered custom metric tags
+- Are there any sensitive data risks with logging?
+  - We would only log interaction events like number of downloads, no personal information will be logged
 ## Infrastructure and network changes
-- List any changes or additions
+  - Apple: Implement PassKit web-service endpoints (register device, check updates, deliver pass) and serve a freshly signed `.pkpass`. Trigger silent updates via APNs when data changes.
+  - Apple: DB for pass metadata (`serialNumber`, `authenticationToken`, `deviceID`, `pushToken`).
 ## Test strategy
 - Describe automated, manual and user acceptance test strategy
   - Unit tests and end-to-end tests for testing "Add to Wallet" flow on frontend
