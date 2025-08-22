@@ -1,7 +1,7 @@
 graph TD
     %% External Users and Devices
     Veteran[Veteran User]
-    MobileApp[VA Mobile App<br/>VeteranStatusCard.tsx]
+    MobileApp[VA Mobile App<br/>VeteranStatusScreen.tsx]
     
     %% VA Platform AWS Environment Boundary
     subgraph "VA Platform AWS Environment"
@@ -29,7 +29,7 @@ graph TD
     subgraph "External VA Systems"
         direction TB
         Lighthouse[Lighthouse API<br/>Veteran Verification]
-        VAProfile[VA Profile<br/>Military Service History]
+        VAProfile[VA Profile<br/>User Info & Service History]
         DisabilityAPI[Lighthouse Benefits<br/>Disability Ratings]
     end
     
@@ -53,7 +53,7 @@ graph TD
     
     %% Data Returns
     Lighthouse -->|Veteran Status| VetsAPI
-    VAProfile -->|Service History| VetsAPI
+    VAProfile -->|User Info & Service History| VetsAPI
     DisabilityAPI -->|Disability Rating| VetsAPI
     
     %% Response to Users
