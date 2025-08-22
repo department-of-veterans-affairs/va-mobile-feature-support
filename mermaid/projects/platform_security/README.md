@@ -62,8 +62,6 @@ MFS features typically integrate with VA internal services including:
 - **Benefits APIs**: Disability ratings and benefits information
 - **Additional services as required per feature**
 
-*Specific PII types and implementation details are documented in the individual sections below.*
-
 ## Team Information
 
 - **Team**: Mobile Feature Support (MFS)
