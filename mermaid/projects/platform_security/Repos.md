@@ -25,8 +25,10 @@ This repository serves as the central coordination point for the MFS team but do
 **POC**: VA Mobile Team  
 **MFS Usage**: Mobile feature implementations across multiple features  
 **Current Feature Files**:
-- **VSC**: `VAMobile/src/screens/HomeScreen/VeteranStatusScreen/VeteranStatusCard/VeteranStatusCard.tsx`
-- **VSC Tests**: `VAMobile/e2e/tests/VeteranStatusCard.e2e.ts`
+- **VSC Component**: `VAMobile/src/screens/HomeScreen/VeteranStatusScreen/VeteranStatusCard/VeteranStatusCard.tsx`
+- **VSC Screen**: `VAMobile/src/screens/HomeScreen/VeteranStatusScreen/VeteranStatusScreen.tsx`
+- **VSC Screen Tests**: `VAMobile/src/screens/HomeScreen/VeteranStatusScreen/VeteranStatusScreen.test.tsx`
+- **VSC E2E Tests**: `VAMobile/e2e/tests/VeteranStatusCard.e2e.ts`
 
 ### VA Website Repository  
 **Repository**: https://github.com/department-of-veterans-affairs/vets-website  
@@ -34,8 +36,9 @@ This repository serves as the central coordination point for the MFS team but do
 **POC**: VA.gov Platform Team  
 **MFS Usage**: Web feature implementations across multiple features  
 **Current Feature Files**:
-- **VSC**: `src/applications/personalization/profile/components/veteran-status-card/VeteranStatusCard.jsx`
-- **VSC**: `src/applications/personalization/profile/components/veteran-status-card/VeteranStatus.jsx`
+- **VSC Components**: `src/applications/personalization/profile/components/veteran-status-card/` (folder containing VeteranStatusCard.jsx, VeteranStatus.jsx, VeteranStatusAlerts.jsx, FrequentlyAskedQuestions.jsx, and hooks)
+- **VSC Unit Tests**: `src/applications/personalization/profile/tests/components/veteran-status-card/` (folder containing component unit tests)
+- **VSC E2E Tests**: `src/applications/personalization/profile/tests/e2e/veteran-status-card/` (folder containing Cypress e2e tests)
 - **VSC Styles**: `src/applications/personalization/profile/sass/veteran-status-card.scss`
 
 ### VA API Repository

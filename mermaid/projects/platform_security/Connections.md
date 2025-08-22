@@ -55,6 +55,20 @@ MFS team features connect to various external systems outside the Platform AWS E
   - **To Lighthouse**: Veteran identification (ICN)
   - **From Lighthouse**: Disability rating percentage, rating details
 
+**4. VA Profile User Service**
+- **Connection Type**: HTTP API  
+- **Direction**: Outbound from vets-api to VA Profile  
+- **Purpose**: Retrieve veteran name and user identification information
+- **Technical Implementation**:
+  - **Service**: `VAProfile::ContactInformation::Service`
+  - **Models**: `VAProfile::Models::Person`
+  - **Integration**: Used for veteran name display in status card
+- **POC**: VA Profile Team
+- **Encryption in Transit**: HTTPS/TLS  
+- **PII Shared**:
+  - **To VA Profile**: Veteran identification (ICN/user session)
+  - **From VA Profile**: Veteran full name, contact information
+
 ### Future Feature Connections
 *Additional features will have their external system connections documented here as they are developed.*
 
