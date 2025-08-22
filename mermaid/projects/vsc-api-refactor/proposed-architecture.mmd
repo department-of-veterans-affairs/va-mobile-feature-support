@@ -1,0 +1,68 @@
+graph TD
+    subgraph "Client Applications"
+        WEB[Web Frontend<br/>va.gov] --> WEB_API[Web veteranStatusCard API]
+        MOBILE[Mobile App] --> MOBILE_API[Mobile veteranStatusCard API]
+    end
+    
+    subgraph "Platform-Specific API Layer"
+        WEB_API --> WEB_AUTH[Web Authentication<br/>& Permissions]
+        MOBILE_API --> MOBILE_AUTH[Mobile Authentication<br/>& Permissions]
+        
+        WEB_AUTH --> VSC_SERVICE[Veteran Status Card Service]
+        MOBILE_AUTH --> VSC_SERVICE
+    end
+    
+    subgraph "New Unified Backend Service"
+        VSC_SERVICE --> LOGIC[Unified Business Logic]
+        
+        LOGIC --> SH_SERVICE[Service History Service]
+        LOGIC --> VVS_SERVICE[Vet Verification Service]
+        LOGIC --> FUTURE_SERVICE[Future Data Sources]
+        
+        SH_SERVICE --> DB1[(Service History DB)]
+        VVS_SERVICE --> DB2[(Verification Status DB)]
+        FUTURE_SERVICE --> DB3[(Future Data Sources)]
+        
+        LOGIC --> RESPONSE_BUILDER[Response Builder]
+        RESPONSE_BUILDER --> STANDARDIZED[Standardized Response]
+    end
+    
+    subgraph "Standardized Response Structure"
+        STANDARDIZED --> STATUS{Status Type}
+        STATUS -->|Success| SUCCESS_DATA[Success Response<br/>+ Display Data]
+        STATUS -->|Warning| WARNING_DATA[Warning Response<br/>+ Display Data<br/>+ Warning Message]
+        STATUS -->|Error| ERROR_DATA[Error Response<br/>+ Display Data<br/>+ Error Message]
+    end
+    
+    subgraph "Client Response Handling"
+        STANDARDIZED --> WEB_RENDER[Web UI Rendering]
+        STANDARDIZED --> MOBILE_RENDER[Mobile UI Rendering]
+    end
+    
+    subgraph "Key Benefits"
+        BENEFIT1[Single Source of Truth]
+        BENEFIT2[Consistent Messaging]
+        BENEFIT3[Simplified Frontend]
+        BENEFIT4[Future-Proof Design]
+    end
+    
+    VSC_SERVICE -.-> BENEFIT1
+    STANDARDIZED -.-> BENEFIT2
+    WEB_RENDER -.-> BENEFIT3
+    MOBILE_RENDER -.-> BENEFIT3
+    FUTURE_SERVICE -.-> BENEFIT4
+    
+    style WEB_API fill:#4caf50
+    style MOBILE_API fill:#4caf50
+    style VSC_SERVICE fill:#4caf50
+    style LOGIC fill:#4caf50
+    style STANDARDIZED fill:#2196f3
+    style WEB fill:#e3f2fd
+    style MOBILE fill:#f3e5f5
+    style WEB_AUTH fill:#e8f5e8
+    style MOBILE_AUTH fill:#e8f5e8
+    style BENEFIT1 fill:#e8f5e8
+    style BENEFIT2 fill:#e8f5e8
+    style BENEFIT3 fill:#e8f5e8
+    style BENEFIT4 fill:#e8f5e8
+    style FUTURE_SERVICE fill:#fff3e0

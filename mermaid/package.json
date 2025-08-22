@@ -1,0 +1,25 @@
+{
+  "name": "ariel",
+  "version": "1.0.0",
+  "description": "CLI tool for compiling Mermaid diagrams to images",
+  "main": "cli.js",
+  "scripts": {
+    "compile": "node cli.js",
+    "compile:project": "node cli.js --project"
+  },
+  "engines": {
+    "node": ">=18.20.0"
+  },
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.6.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "mermaid",
+    "diagrams",
+    "cli",
+    "va-mobile"
+  ],
+  "author": "MFS-ATeal",
+  "license": "MIT"
+}

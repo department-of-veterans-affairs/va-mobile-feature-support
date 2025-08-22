@@ -1,0 +1,14 @@
+graph TD
+    A[User Request] --> B[Authentication Service]
+    B --> C{Valid User?}
+    C -->|Yes| D[Process Request]
+    C -->|No| E[Return Error]
+    D --> F[Database Query]
+    F --> G[Format Response]
+    G --> H[Return Success]
+    E --> I[Log Error]
+    I --> J[Return Error Response]
+    
+    style A fill:#e1f5fe
+    style H fill:#e8f5e8
+    style J fill:#ffebee

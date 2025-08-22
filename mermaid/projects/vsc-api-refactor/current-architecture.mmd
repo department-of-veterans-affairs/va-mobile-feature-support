@@ -1,0 +1,48 @@
+graph TD
+    subgraph "Web Platform (va.gov)"
+        WEB[Web Frontend] --> API1[Web serviceHistory API]
+        WEB --> API2[Web vetVerificationStatus API]
+        API1 --> WEB_COMP[Frontend Computation]
+        API2 --> WEB_COMP
+        WEB_COMP --> WEB_UI[Display Web UI]
+    end
+    
+    subgraph "Mobile Platform"
+        MOBILE[Mobile App] --> API3[Mobile serviceHistory API]
+        MOBILE --> API4[Mobile vetVerificationStatus API]
+        API3 --> MOBILE_COMP[Frontend Computation]
+        API4 --> MOBILE_COMP
+        MOBILE_COMP --> MOBILE_UI[Display Mobile UI]
+    end
+    
+    subgraph "Backend Services"
+        API1 --> DB1[(Service History DB)]
+        API2 --> DB2[(Verification Status DB)]
+        API3 --> DB1
+        API4 --> DB2
+    end
+    
+    subgraph "Current Issues"
+        ISSUE1[Duplicated Logic]
+        ISSUE2[Inconsistent Messaging]
+        ISSUE3[Frontend Complexity]
+        ISSUE4[Platform Drift Risk]
+    end
+    
+    WEB_COMP -.-> ISSUE1
+    MOBILE_COMP -.-> ISSUE1
+    WEB_UI -.-> ISSUE2
+    MOBILE_UI -.-> ISSUE2
+    WEB_COMP -.-> ISSUE3
+    MOBILE_COMP -.-> ISSUE3
+    WEB_UI -.-> ISSUE4
+    MOBILE_UI -.-> ISSUE4
+    
+    style WEB fill:#e3f2fd
+    style MOBILE fill:#f3e5f5
+    style WEB_COMP fill:#ffecb3
+    style MOBILE_COMP fill:#ffecb3
+    style ISSUE1 fill:#ffebee
+    style ISSUE2 fill:#ffebee
+    style ISSUE3 fill:#ffebee
+    style ISSUE4 fill:#ffebee
