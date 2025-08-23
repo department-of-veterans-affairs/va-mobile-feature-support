@@ -124,7 +124,9 @@ This diagram must also illustrate the following specifics.
   - Which implementation of security approaches were considered along with the approach that was chosen and why?
   - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
 - Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
+  - The Mobile Feature Support will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C07SD9P7XB9). The specific plan and timeline for resolution will depend on the nature of the issue. As a full-time contract team, we are committed to addressing problems promptly and will coordinate with the Core Mobile team on any required messaging to affected users during remediation.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
+        - We’ll triage and develop a solution immediately, then test and deploy the fix, with stakeholders notified as soon as it’s live. 
 - Sequence Diagram:
 This diagram must include any authentication steps if this is an authenticated experience.
 - Data Flow Diagram:
