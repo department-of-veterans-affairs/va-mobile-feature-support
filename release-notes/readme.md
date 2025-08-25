@@ -20,6 +20,27 @@ Please view the release notes below for information about our deployments to var
 - **A11y tested & zoom verified** – Tested zoom up to 400 % to meet accessibility requirements. Ran Axe DevTools scan and fixed a11y issues.
 - **Legacy card hidden** – Original card suppressed when the `vetStatusStage1` flag is enabled to avoid duplicate UI.
 
+## Veteran Status Card Web Redesign | 05/16/2025
+- Created a Data Dog dashboard to capture analytics.
+
+## Veteran Status Card Web Redesign | 05/12/2025
+- Provided link to the VSC on the Profile page.
+
+## Veteran Status Card Web Redesign | 05/08/2025
+- Added the Feedback button to the bottom of the new page for the Veteran Status Card.
+
+## Veteran Status Card Web Redesign | 05/02/2025
+- Update the Veteran Status Card PDF to match stage 1 redesign.
+
+## Veteran Status Card Web Redesign | 04/30/2025
+- Implemented an FAQ section below the Veteran Status Card on new page.
+
+## Veteran Status Card Web Redesign | 04/29/2025
+- Created a dedicated page for the Veteran Status Card under Profile.
+
+## Veteran Status Card Redesign Mobile | 04/24/2025
+- Released to VA Mobile App.
+
 ## Veteran Status Card Web Redesign | 04/17/2025
 - Added feature flag for front end elements
 
