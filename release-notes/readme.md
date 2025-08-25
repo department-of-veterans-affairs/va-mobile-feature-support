@@ -7,8 +7,26 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Overpayment and Copayment Debts | 08/20/2025
+- Developed the Medical Copays Endpoint
+
+## Veteran Status Card Web Redesign | 08/08/2025
+- Enabled monitors to track any errors that are surfaced when users try to download their VSC as a PDF on VA.gov.
+
+## Veteran Status Card Web Redesign | 08/07/2025
+- Fixed a blocked popup issue for users downloading the VSC PDF.
+
+## Veteran Status Card Web Redesign | 07/31/2025
+- Removed the old VSC card entirely from the Military Information page including tests amd feature flag.
+
+## Claim Letter Downloads Analytics | 07/28/2025
+- Add claim letter type descriptions to the analytics event that already exists.
+
 ## VAHB Mobile App Analytics | 07/22/2025
 - **Claim/Decision Letter Type Analytics** - Updated the `vama_ddl_letter_view` event so the Claims team can view a breakdown of Claim/Decision Letter types and their total counts in Google Analytics.
+
+## Veteran Status Card Redesign Mobile | 07/17/2025
+- Wrapped the VSC in the availability framework components.
 
 ## Veteran Status Card Redesign Mobile | 07/14/2025
 - Fixed e2e test due to consistent timeout failures.
