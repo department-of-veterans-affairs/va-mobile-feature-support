@@ -10,8 +10,26 @@ Please view the release notes below for information about our deployments to var
 ## VAHB Mobile App Analytics | 07/22/2025
 - **Claim/Decision Letter Type Analytics** - Updated the `vama_ddl_letter_view` event so the Claims team can view a breakdown of Claim/Decision Letter types and their total counts in Google Analytics.
 
-## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
+## Mobile App Sort Updates | 06/30/2025
+- Moved front end sorting activities to the API layer.
 
+## Veteran Status Card Web Redesign | 06/24/2025
+- Made updates to VoiceOver to be less  "wordy".
+
+## Veteran Status Card Web Redesign | 06/24/2025
+- Updated a font in the page heading.
+
+## Veteran Status Card Web Redesign | 06/23/2025
+- Veterans who have a 0% disability rating  can now see the disability rating on the card.
+- Updated H1's on the Profile page to match the rest of the site's H1's.
+
+## Veteran Status Card Web Redesign | 06/12/2025
+- Made a styling adjustment to a heading on VSC page.
+
+## Veteran Status Card Web Redesign | 06/12/2025
+- Made a styling adjustment to intro paragraph on VSC page.
+
+## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
 - **PDF updates** – Proof-of-Veteran-Status PDF page copy updated; PDF-error guidance moved into the new FAQ.
 - **Dedicated VSC page** – Introduces a standalone route that hosts the redesigned card and its FAQ.
 - **Easy access from Profile** – “Access your Veteran Status Card” link added in Profile › Military Information (feature-flag controlled).
@@ -19,6 +37,9 @@ Please view the release notes below for information about our deployments to var
 - **Alert updates** – Centralized `VeteranStatusAlerts` component shows system, eligibility, and PDF-error messages.
 - **A11y tested & zoom verified** – Tested zoom up to 400 % to meet accessibility requirements. Ran Axe DevTools scan and fixed a11y issues.
 - **Legacy card hidden** – Original card suppressed when the `vetStatusStage1` flag is enabled to avoid duplicate UI.
+
+## Public Repository | 05/20/2025
+- Made Mobile Feature Support repository public.
 
 ## Veteran Status Card Web Redesign | 05/16/2025
 - Created a Data Dog dashboard to capture analytics.
