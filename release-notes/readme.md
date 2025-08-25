@@ -45,8 +45,6 @@ Please view the release notes below for information about our deployments to var
 
 ## Veteran Status Card Web Redesign | 06/24/2025
 - Made updates to VoiceOver to be less  "wordy".
-
-## Veteran Status Card Web Redesign | 06/24/2025
 - Updated a font in the page heading.
 
 ## Veteran Status Card Web Redesign | 06/23/2025
@@ -55,8 +53,6 @@ Please view the release notes below for information about our deployments to var
 
 ## Veteran Status Card Web Redesign | 06/12/2025
 - Made a styling adjustment to a heading on VSC page.
-
-## Veteran Status Card Web Redesign | 06/12/2025
 - Made a styling adjustment to intro paragraph on VSC page.
 
 ## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
