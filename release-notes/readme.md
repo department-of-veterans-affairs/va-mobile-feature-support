@@ -10,6 +10,18 @@ Please view the release notes below for information about our deployments to var
 ## VAHB Mobile App Analytics | 07/22/2025
 - **Claim/Decision Letter Type Analytics** - Updated the `vama_ddl_letter_view` event so the Claims team can view a breakdown of Claim/Decision Letter types and their total counts in Google Analytics.
 
+## Veteran Status Card Redesign Mobile | 07/14/2025
+- Fixed e2e test due to consistent timeout failures.
+
+## Mobile App Sort Updates | 07/10/2025
+- Implemented front end work to move sorting activites to the API layer.
+
+## Veteran Status Card Web Redesign | 07/09/2025
+- Updated "Something went wrong" alert to be a yellow warning alert.
+
+## Veteran Status Card Web Redesign | 07/07/2025
+- Updated web monitors to 60% threshold for error monitors.
+
 ## Mobile App Sort Updates | 06/30/2025
 - Moved front end sorting activities to the API layer.
 
