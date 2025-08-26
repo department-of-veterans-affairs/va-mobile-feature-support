@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Overpayment and Copayment Feature Flag Toggle | 08/26/2025
+- Added the `overpayCopay` feaure flag to the project for the upcoming overpay/copay work.
+
 ## Overpayment and Copayment Debts | 08/20/2025
 - Developed the Medical Copays Endpoint
 
