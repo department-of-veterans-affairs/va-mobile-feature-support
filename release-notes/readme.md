@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Added Debt Endpoints to Mobile App | 8/29/2025
+- Added the endpoints `/v0/debts` and `/v0/debts/:id` to the project so now we can get Overpayment Debts in the app.
+
 ## Veteran Status Card Redesign | 8/27/2025
 - Removed `vet_status_stage_1` feature flag, errors details and titles are now dynamically generated and sent by the API.
 
