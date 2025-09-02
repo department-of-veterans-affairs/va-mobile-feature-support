@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Added Medical Copay Endpoints to Mobile App | 9/2/2025
+- Added the endpoints `/v0/medical_copays`, `/v0/medical_copays/{id}`, & `/v0/medical_copays/download/{id}` to the project so now we can fetch medical copay data and download copay statements in the app.
+
 ## Added Debt Endpoints to Mobile App | 8/29/2025
 - Added the endpoints `/v0/debts` and `/v0/debts/:id` to the project so now we can get Overpayment Debts in the app.
 
