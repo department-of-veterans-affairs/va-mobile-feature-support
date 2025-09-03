@@ -108,11 +108,11 @@ The overpay copay feature leverages existing caching infrastructure in vets-api 
 #### TTL Strategy
 - **Debt data**: 1 hour (3600 seconds) TTL for overpayment debt information  
 - **Medical copays**: Uses same dynamic TTL strategy as debt data for empty responses
-- **Empty responses**: Dynamic TTL set to expire at 5:00 AM UTC, aligned with upstream system data refresh cycles
+- **Empty responses**: Dynamic TTL set to expire at 5:00 AM UTC
 
 #### Cache Management
 - **Expiration**: TTL-based expiration only - no explicit cache invalidation mechanisms
-- **Empty response handling**: Special logic caches empty responses until 5 AM UTC when external systems refresh data
+- **Empty response handling**: Special logic caches empty responses until 5 AM UTC
 - **Error handling**: Cache misses trigger fresh API calls to upstream systems
 
 ### Performance Monitoring
