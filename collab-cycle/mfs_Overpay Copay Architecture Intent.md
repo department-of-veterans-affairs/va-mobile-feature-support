@@ -86,6 +86,45 @@
   - No new storage of PII or PHI is introduced. Existing vets-api standards and patterns for secure handling of sensitive data continue to apply
 - **Is this change introducing a large or new volume of data?**
   - No, this change does not introduce large or new volumes of data. It displays existing debt and copayment data that is already stored//fetched in VA backend systems.
+## Caching Implementation
+
+The overpay copay feature leverages existing caching infrastructure in vets-api that is shared between both mobile and regular web endpoints. This ensures consistent performance and data handling across all access methods.
+
+### Architecture Overview
+- **Rails.cache with Redis backend**: Utilizes Rails' unified caching API with Redis as the storage engine, providing consistent interface and automatic serialization
+- **Shared services**: Mobile endpoints use the same underlying services (`DebtManagementCenter::DebtsService` and `MedicalCopays::VBS::Service`) as regular endpoints, ensuring identical caching behavior
+- **Cache pattern**: Implements cache-aside pattern where data is loaded on-demand and cached for subsequent requests
+
+### Technical Implementation Details
+
+#### Implementation References
+- **Debt Service**: [DebtManagementCenter::DebtsService](https://github.com/department-of-veterans-affairs/vets-api/blob/master/lib/debt_management_center/debts_service.rb#L99) - Cache key definition and TTL logic
+- **Medical Copays Service**: [MedicalCopays::VBS::Service](https://github.com/department-of-veterans-affairs/vets-api/blob/master/app/services/medical_copays/vbs/service.rb#L65) - Empty response caching logic  
+
+#### Cache Keys
+- **Debt data**: `"debts_data_#{user.uuid}"` - User-specific cache keys ensure data isolation
+- **Medical copays**: `"vbs_copays_data_#{user.uuid}"` - Separate keying for copayment data from VBS system
+
+#### TTL Strategy
+- **Debt data**: 1 hour (3600 seconds) TTL for overpayment debt information  
+- **Medical copays**: Uses same dynamic TTL strategy as debt data for empty responses
+- **Empty responses**: Dynamic TTL set to expire at 5:00 AM UTC
+
+#### Cache Management
+- **Expiration**: TTL-based expiration only - no explicit cache invalidation mechanisms
+- **Empty response handling**: Special logic caches empty responses until 5 AM UTC
+- **Error handling**: Cache misses trigger fresh API calls to upstream systems
+
+### Performance Monitoring
+- **StatsD metrics**: Comprehensive tracking of cache hits, misses, and empty responses
+- **Key metrics tracked**: 
+  - `api.dmc.init_cached_debts.cached_response_returned` - Debt cache hits
+  - `api.dmc.init_cached_debts.empty_response_cached` - Empty debt response caching
+  - `api.dmc.get_debts.success/failure` - Debt API call success/failure rates
+  - `api.mcp.vbs.init_cached_copays.cached_response_returned` - Medical copay cache hits
+  - `api.mcp.vbs.init_cached_copays.empty_response_cached` - Empty copay response caching
+  - `api.mcp.vbs.pdf.total/failure` - PDF statement generation tracking
+
 - **Do these changes impact database or caching layers (ex: Redis, Postgres)? Do the changes have implications for data volume, memory, or CPU usage to consider?**
   - No significant impact on database or caching layers. The new API endpoints will use existing database queries and caching patterns already established in vets-api.
 - **Does this project/update expect to persist information? What is the expiration policy for data added to the system? What is the cleanup/removal process or mechanism?**
