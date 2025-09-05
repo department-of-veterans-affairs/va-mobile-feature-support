@@ -7,6 +7,10 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Overpayment and Copayment High-level User Navigation | 9/5/2025
+- Added main UX elements, screens and navigation for overpayments and copays.
+- Implemented buttons for `Resolve debt` and `Resolve bill` action/bottom sheet.
+
 ## Update Mobile App Documentation | 9/3/2025
 - Updated mermaid documentation for the mobile app to reflect the addition of medical copay endpoints.
 
