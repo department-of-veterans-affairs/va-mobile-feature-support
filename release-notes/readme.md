@@ -29,6 +29,9 @@ Please view the release notes below for information about our deployments to var
 ## Overpayment and Copayment Debts | 08/20/2025
 - Developed the Medical Copays Endpoint
 
+## Claim Letter Downloads Analytics | 08/12/2025
+- Released to VA Mobile App.
+
 ## Veteran Status Card Web Redesign | 08/08/2025
 - Enabled monitors to track any errors that are surfaced when users try to download their VSC as a PDF on VA.gov.
 
@@ -52,6 +55,10 @@ Please view the release notes below for information about our deployments to var
 
 ## Mobile App Sort Updates | 07/10/2025
 - Implemented front end work to move sorting activites to the API layer.
+- Released to VA Mobile App.
+
+## Veteran Status Card Web Redesign | 07/10/2025
+- Released to VA.gov to 100% of users. 
 
 ## Veteran Status Card Web Redesign | 07/09/2025
 - Updated "Something went wrong" alert to be a yellow warning alert.
@@ -95,6 +102,9 @@ Please view the release notes below for information about our deployments to var
 ## Veteran Status Card Web Redesign | 05/08/2025
 - Added the Feedback button to the bottom of the new page for the Veteran Status Card.
 
+## Veteran Status Card Web Redesign | 05/06/2025
+- Released to VA Mobile App.
+
 ## Veteran Status Card Web Redesign | 05/02/2025
 - Update the Veteran Status Card PDF to match stage 1 redesign.
 
@@ -104,7 +114,7 @@ Please view the release notes below for information about our deployments to var
 ## Veteran Status Card Web Redesign | 04/29/2025
 - Created a dedicated page for the Veteran Status Card under Profile.
 
-## Veteran Status Card Redesign Mobile | 04/24/2025
+## VAHB Mobile App Veteran Status Card Surfacing | 04/22/2025
 - Released to VA Mobile App.
 
 ## Veteran Status Card Web Redesign | 04/17/2025
