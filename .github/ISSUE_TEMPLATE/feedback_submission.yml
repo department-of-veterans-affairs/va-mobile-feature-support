@@ -1,0 +1,34 @@
+name: Feedback Submission
+description: Provide feedback to the MFS team.
+title: 'Feedback for [Feature Name]'
+labels: [feedback-to-vet]
+projects: [department-of-veterans-affairs/1427]
+body:
+  - type: input
+    id: featurename
+    attributes:
+      label: Feature name
+      description: Please describe the feature that you are providing feedback for.
+    validations:
+      required: true
+  - type: dropdown
+    id: feedbacktype
+    attributes:
+      label: Feedback type
+      options: ["UX", "Engineering", "Product", "Other"]
+    validations:
+      required: true
+  - type: dropdown
+    id: impactlevel
+    attributes:
+      label: Impact level
+      options: ["Must do", "Should do", "Consider doing"]
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: Please provide your feedback in as detailed a manner as possible. If applicable, you can add attachments in the comments after the issue has been submitted.
+    validations:
+      required: true
