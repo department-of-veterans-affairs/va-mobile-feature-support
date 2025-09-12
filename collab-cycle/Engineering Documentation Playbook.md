@@ -19,9 +19,11 @@ After experimenting with multiple tools, [Mermaid Chart](https://www.mermaidchar
 
 Here are three different ways to create a diagram with Mermaid:
 
-- **Mermaid's Website**: You can use the free edition of Mermaid create and save up to three diagrams. Once you have finished your diagram, it can be copied and pasted into GitHub and shared with others. This is probaly the simplest and easiest approach.
+- **Mermaid's Website**: You can use the free edition of Mermaid create and save up to three diagrams. Once you have finished your diagram, it can be copied and pasted into GitHub and shared with others (see note below). This is probaly the simplest and easiest approach.
 - **Visual Studio Code**: There is a [Mermaid Chart extension for VS Code](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) that allows you to create, edit and visualize diagrams locally. This also works great.
-- **GitHub**: Our GitHub repos also support Mermaid via a plug-in. Using this method, you could edit and preview diagrams directly within GitHub. To embed a Mermaid chart in GitHub, you must surround the diagram with a leading line (3 backtick characters + mermaid) and a trailing line (3 backtick characters).
+- **GitHub**: Our GitHub repos also support Mermaid via a plug-in. Using this method, you could edit and preview diagrams directly within GitHub (see note below).
+
+> NOTE: To embed a Mermaid chart in GitHub, you must surround the diagram with a leading line that has three backtick characters followed by the word "mermaid" and a trailing line that has three backtick characters.
 
 Here are some recommendations on how to get started if you are new to Mermaid:
 
@@ -32,17 +34,25 @@ Here are some recommendations on how to get started if you are new to Mermaid:
 
 An architecture diagram is a visual representation that serves as a blueprint for a system, illustrating its components, their relationships, and how they interact. It is a crucial tool for understanding, designing, communicating, and maintaining complex systems.
 
+Mermaid does offer an [architecture](https://docs.mermaidchart.com/mermaid-oss/syntax/architecture.html) diagram type, but it is in beta and very limited. It is better to use a Mermaid [flowchart/graph](https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html) to represent an architecture diagram. [Here is an example](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-architecture-diagram-20250806.md) created for the overpay/copay architecture intent.
+
 ### Data Flow Diagram
 
 A data flow diagram is a visual representation that maps out how data moves through an information system or a business process. Think of it as a map of data's journey, showing where it originates, how it's transformed, where it's stored, and where it ultimately goes.
+
+Use a Mermaid [flowchart diagram](https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html) to create a data flow diagram. [Here is an example](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-data-flow-diagram-20250808.md) created for the overpay/copay architecture intent.
 
 ### Sequence Diagram
 
 A sequence diagram is a type of UML (Unified Modeling Language) interaction diagram that visualizes how objects or components interact with each other in a specific scenario or use case over time. It's crucial in software development for understanding and designing the dynamic behavior of a system. Sequence diagrams focus on the order in which messages are sent and received between different participants (objects, components, or actors) in a system.
 
+Use a Mermaid [sequence diagram](https://docs.mermaidchart.com/mermaid-oss/syntax/sequenceDiagram.html) to create one of these. [Here is an example](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-sequence-diagram-20250808.md) created for the overpay/copay architecture intent.
+
 ### User Data Flow Diagram
 
 A User Data Flow Diagram is a visual representation that illustrates how data moves through a system from the perspective of a user. It's a specialized type of Data Flow Diagram that emphasizes the user's interaction with the data and the system's response.
+
+Use a Mermaid [flowchart diagram](https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html) to create a user data flow diagram. [Here is an example](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-user-data-flow-20250729.md) created for the overpay/copay architecture intent.
 
 ## Incident Response Plan
 
