@@ -7,6 +7,10 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Mobile Wallet POC | 9/15/2025
+- Added scaffolding for Google and Apple wallets in new repository [here](https://github.com/department-of-veterans-affairs/mobile-wallet-poc)
+- Deployed mobile wallet api to a hosted server and tested Apple responses
+
 ## Overpayment and Copayment High-level User Navigation | 9/5/2025
 - Added main UX elements, screens and navigation for overpayments and copays.
 - Implemented buttons for `Resolve debt` and `Resolve bill` action/bottom sheet.
