@@ -1,6 +1,8 @@
 # Engineering Documentation Playbook
 
-The purpose of this playbook is to provide recommendations for how engineers can efficiently create the necessary artifacts for a collaboration cycle.
+The purpose of this playbook is to provide recommendations for how engineers can efficiently create the necessary [artifacts](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/eng-sec-checklist.md#artifacts) for a [collaboration cycle](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/overview). There are many touchpoints in a collobartion cycle. This playbook focuses on the [Architecure Intent](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/architecture-intent) touchpoint and the documents/diagrams engineers must create. As an example, here is a [link](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/mfsimh-mobile-overpay-copay-08082025.md#artifacts) to the artifacts created for the overpay/copay architecture intent.
+
+All documents/diagrams must be stored in the [mobile feature support sensitive repo](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/tree/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support) and be named in this format: [application]-[document/diagram name]-[date].md. Date should be in MMDDYYYY format.
 
 ## API Endpoint Documentation
 
@@ -53,6 +55,8 @@ Use a Mermaid [sequence diagram](https://docs.mermaidchart.com/mermaid-oss/synta
 A User Data Flow Diagram is a visual representation that illustrates how data moves through a system from the perspective of a user. It's a specialized type of Data Flow Diagram that emphasizes the user's interaction with the data and the system's response.
 
 Use a Mermaid [flowchart diagram](https://docs.mermaidchart.com/mermaid-oss/syntax/flowchart.html) to create a user data flow diagram. [Here is an example](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-user-data-flow-20250729.md) created for the overpay/copay architecture intent.
+
+More advice and examples can be found [here](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/practices/zero-silent-failures/how-to-create-a-user-data-flow-diagram.md).
 
 ## Incident Response Plan
 
