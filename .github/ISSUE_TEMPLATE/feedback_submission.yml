@@ -22,7 +22,7 @@ body:
     id: impactlevel
     attributes:
       label: Impact level
-      options: ["Must do", "Should do", "Consider doing"]
+      options: ["Consider doing", "Should do", "Must do"]
     validations:
       required: true
   - type: textarea
