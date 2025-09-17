@@ -1,6 +1,6 @@
 # Engineering Documentation Playbook
 
-The purpose of this playbook is to provide recommendations for how engineers can efficiently create the necessary [artifacts](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/eng-sec-checklist.md#artifacts) for a [collaboration cycle](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/overview). There are many touchpoints in a collobartion cycle. This playbook focuses on the [Architecure Intent](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/architecture-intent) touchpoint and the documents/diagrams engineers must create. As an example, here is a [link](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/mfsimh-mobile-overpay-copay-08082025.md#artifacts) to the artifacts created for the overpay/copay architecture intent.
+The purpose of this playbook is to provide recommendations for how engineers can efficiently create the necessary [artifacts](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/eng-sec-checklist.md#artifacts) for a [collaboration cycle](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/overview). There are many touchpoints in a collaboration cycle. This playbook focuses on the [Architecure Intent](https://depo-platform-documentation.scrollhelp.site/collaboration-cycle/architecture-intent) touchpoint and the documents/diagrams engineers must create. As an example, here is a [link](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/checklist/mfsimh-mobile-overpay-copay-08082025.md#artifacts) to the artifacts created for the overpay/copay architecture intent.
 
 All documents/diagrams must be stored in the [mobile feature support sensitive repo](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/tree/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support) and be named in this format: `[application]-[document/diagram name]-[date].md`. Date should be in MMDDYYYY format.
 
@@ -62,4 +62,9 @@ More advice and examples can be found [here](https://github.com/department-of-ve
 
 ## Incident Response Plan
 
-TODO
+```Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.```
+- **Points of Contact**: Identify which team(s) are responsible for owning incidents related to the project. Provide a Slack channel where issues should be reported. If there is an individual PoC, reference them here. If other VA back-end teams are dependencies, note which teams they are and how escalation should occur.
+- **Coordination and Messaging**: If applicable, note how you will work with other teams (e.g., Core Mobile) to coordinate any messaging to affected users.
+  
+```If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?```
+- **Security Vulnerabilities**: Describe the plan and typical timeline for addressing reported vulnerabilities (e.g., “triage and develop a solution immediately, then test and deploy the fix, with stakeholders notified as soon as it’s live.”).
