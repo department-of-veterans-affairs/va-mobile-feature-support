@@ -6,7 +6,13 @@ All documents/diagrams must be stored in the [mobile feature support sensitive r
 
 ## API Endpoint Documentation
 
-TODO
+Any API endpoints added in the process of creating or updating a product should be thoroughly documented via swagger docs. These can be directly linked into the architecture intent. For more information on the proper way to document them and where to access them see the following:
+- [Platform API Documentation documentation](https://depo-platform-documentation.scrollhelp.site/developer-docs/documentation)
+- [Mobile API Swagger](https://department-of-veterans-affairs.github.io/va-mobile-app/api/)
+- [Platform API Swagger](https://department-of-veterans-affairs.github.io/va-digital-services-platform-docs/api-reference/)
+- Mobile API Swagger Code Example
+  - [API Definition](https://github.com/department-of-veterans-affairs/vets-api/blob/master/modules/mobile/docs/openapi.json#L4962)
+  - [Schema Definition](https://github.com/department-of-veterans-affairs/vets-api/blob/master/modules/mobile/docs/schemas/MedicalCopay.yml)
 
 ## Engineering Diagrams
 
