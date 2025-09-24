@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Payment Screen: Update Overpay & Copay Components | 9/24/2025
+- Updated overpay/copay components on the Payment screen to show total amount of money owed and the number of debts/bills. Also, included empty state screens for both ovepay and copay.
+
 ## Mobile Wallet POC | 9/15/2025
 - Added scaffolding for Google and Apple wallets in new repository [here](https://github.com/department-of-veterans-affairs/mobile-wallet-poc)
 - Deployed mobile wallet api to a hosted server and tested Apple responses
