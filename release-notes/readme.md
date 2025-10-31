@@ -7,6 +7,11 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Overpayment and Copayment Implementation Build-Out | 10/31/2025
+- Updated the Overpayment and Copay components for the Activity section of the Home screen to show the total amount of money owed
+and the number of debts/bills.
+- Implemented the Overpayment debts list screen and corresponding `Resolve debt` button
+
 ## Payment Screen: Update Overpay & Copay Components | 9/24/2025
 - Updated overpay/copay components on the Payment screen to show total amount of money owed and the number of debts/bills. Also, included empty state screens for both ovepay and copay.
 
