@@ -13,6 +13,7 @@ Please view the release notes below for information about our deployments to var
   - The team still needs to fix a few accessibilty issues.
   - The team still needs to take another pass to make content updates, mainly to rename `Overpayment debts` to just `Overpayments`.
   - The team still needs to incorporate 12 VBA alerts from the Financial Management team.
+  - The team still needs to implement the new copays API from the Financial Management team.
   - The team still needs to implement both backend and frontend analytics.
 
 ## Overpayment and Copayment Implementation Build-Out | 10/31/2025
