@@ -7,11 +7,93 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Overpayment and Copayment Implementation Build-Out | 10/31/2025
+- Updated the Overpayment and Copay components for the Activity section of the Home screen to show the total amount of money owed
+and the number of debts/bills.
+- Implemented the Overpayment debts list screen and corresponding `Resolve debt` button
+
+## Payment Screen: Update Overpay & Copay Components | 9/24/2025
+- Updated overpay/copay components on the Payment screen to show total amount of money owed and the number of debts/bills. Also, included empty state screens for both ovepay and copay.
+
+## Mobile Wallet POC | 9/15/2025
+- Added scaffolding for Google and Apple wallets in new repository [here](https://github.com/department-of-veterans-affairs/mobile-wallet-poc)
+- Deployed mobile wallet api to a hosted server and tested Apple responses
+
+## Overpayment and Copayment High-level User Navigation | 9/5/2025
+- Added main UX elements, screens and navigation for overpayments and copays.
+- Implemented buttons for `Resolve debt` and `Resolve bill` action/bottom sheet.
+
+## Update Mobile App Documentation | 9/3/2025
+- Updated mermaid documentation for the mobile app to reflect the addition of medical copay endpoints.
+
+## Added Medical Copay Endpoints to Mobile App | 9/2/2025
+- Added the endpoints `/v0/medical_copays`, `/v0/medical_copays/{id}`, & `/v0/medical_copays/download/{id}` to the project so now we can fetch medical copay data and download copay statements in the app.
+
+## Added Debt Endpoints to Mobile App | 8/29/2025
+- Added the endpoints `/v0/debts` and `/v0/debts/:id` to the project so now we can get Overpayment Debts in the app.
+
+## Veteran Status Card Redesign | 8/27/2025
+- Removed `vet_status_stage_1` feature flag, errors details and titles are now dynamically generated and sent by the API.
+
+## Overpayment and Copayment Feature Flag Toggle | 08/26/2025
+- Added the `overpayCopay` feaure flag to the project for the upcoming overpay/copay work.
+
+## Overpayment and Copayment Debts | 08/20/2025
+- Developed the Medical Copays Endpoint
+
+## Claim Letter Downloads Analytics | 08/12/2025
+- Released to VA Mobile App.
+
+## Veteran Status Card Web Redesign | 08/08/2025
+- Enabled monitors to track any errors that are surfaced when users try to download their VSC as a PDF on VA.gov.
+
+## Veteran Status Card Web Redesign | 08/07/2025
+- Fixed a blocked popup issue for users downloading the VSC PDF.
+
+## Veteran Status Card Web Redesign | 07/31/2025
+- Removed the old VSC card entirely from the Military Information page including tests amd feature flag.
+
+## Claim Letter Downloads Analytics | 07/28/2025
+- Add claim letter type descriptions to the analytics event that already exists.
+
 ## VAHB Mobile App Analytics | 07/22/2025
 - **Claim/Decision Letter Type Analytics** - Updated the `vama_ddl_letter_view` event so the Claims team can view a breakdown of Claim/Decision Letter types and their total counts in Google Analytics.
 
-## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
+## Veteran Status Card Redesign Mobile | 07/17/2025
+- Wrapped the VSC in the availability framework components.
 
+## Veteran Status Card Redesign Mobile | 07/14/2025
+- Fixed e2e test due to consistent timeout failures.
+
+## Mobile App Sort Updates | 07/10/2025
+- Implemented front end work to move sorting activites to the API layer.
+- Released to VA Mobile App.
+
+## Veteran Status Card Web Redesign | 07/10/2025
+- Released to VA.gov to 100% of users. 
+
+## Veteran Status Card Web Redesign | 07/09/2025
+- Updated "Something went wrong" alert to be a yellow warning alert.
+
+## Veteran Status Card Web Redesign | 07/07/2025
+- Updated web monitors to 60% threshold for error monitors.
+
+## Mobile App Sort Updates | 06/30/2025
+- Moved front end sorting activities to the API layer.
+
+## Veteran Status Card Web Redesign | 06/24/2025
+- Made updates to VoiceOver to be less  "wordy".
+- Updated a font in the page heading.
+
+## Veteran Status Card Web Redesign | 06/23/2025
+- Veterans who have a 0% disability rating  can now see the disability rating on the card.
+- Updated H1's on the Profile page to match the rest of the site's H1's.
+
+## Veteran Status Card Web Redesign | 06/12/2025
+- Made a styling adjustment to a heading on VSC page.
+- Made a styling adjustment to intro paragraph on VSC page.
+
+## Veteran Status Card Web Redesign Continued Updates | 05/30/2025
 - **PDF updates** – Proof-of-Veteran-Status PDF page copy updated; PDF-error guidance moved into the new FAQ.
 - **Dedicated VSC page** – Introduces a standalone route that hosts the redesigned card and its FAQ.
 - **Easy access from Profile** – “Access your Veteran Status Card” link added in Profile › Military Information (feature-flag controlled).
@@ -19,6 +101,33 @@ Please view the release notes below for information about our deployments to var
 - **Alert updates** – Centralized `VeteranStatusAlerts` component shows system, eligibility, and PDF-error messages.
 - **A11y tested & zoom verified** – Tested zoom up to 400 % to meet accessibility requirements. Ran Axe DevTools scan and fixed a11y issues.
 - **Legacy card hidden** – Original card suppressed when the `vetStatusStage1` flag is enabled to avoid duplicate UI.
+
+## Public Repository | 05/20/2025
+- Made Mobile Feature Support repository public.
+
+## Veteran Status Card Web Redesign | 05/16/2025
+- Created a Data Dog dashboard to capture analytics.
+
+## Veteran Status Card Web Redesign | 05/12/2025
+- Provided link to the VSC on the Profile page.
+
+## Veteran Status Card Web Redesign | 05/08/2025
+- Added the Feedback button to the bottom of the new page for the Veteran Status Card.
+
+## Veteran Status Card Web Redesign | 05/06/2025
+- Released to VA Mobile App.
+
+## Veteran Status Card Web Redesign | 05/02/2025
+- Update the Veteran Status Card PDF to match stage 1 redesign.
+
+## Veteran Status Card Web Redesign | 04/30/2025
+- Implemented an FAQ section below the Veteran Status Card on new page.
+
+## Veteran Status Card Web Redesign | 04/29/2025
+- Created a dedicated page for the Veteran Status Card under Profile.
+
+## VAHB Mobile App Veteran Status Card Surfacing | 04/22/2025
+- Released to VA Mobile App.
 
 ## Veteran Status Card Web Redesign | 04/17/2025
 - Added feature flag for front end elements

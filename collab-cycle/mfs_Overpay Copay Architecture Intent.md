@@ -20,6 +20,7 @@
 - Identify any new design system components needed or changes to current components:
   - If the team decides we want to include integrated payments, we anticipate creating a new action sheet/menu component within the app. This component would initially not be part of the design system library, though it may be integrated into it later if successful and approved by VA UX standards. No other components are expected.
 - **Does this update change shared code?**
+  - No, this feature will add new screens and components specific to debt/copayment functionality without modifying existing shared code or components.
 - Describe any product analytics being gathered:
   - Page view events (overpayment & copayment debt screens)
   - Interaction events for external payment links (pay.va.gov & pay.gov)
@@ -29,14 +30,19 @@
 - Does the project introduce any new or unusual infrastructure dependencies?
   - No, the mobile backend will use existing infrastructure and patterns already established in vets-api
 - **Does the project introduce any new connections or exchanges of new information types with other systems? (e.g. "new" meaning a new connection of type of information not already present in `vets-api`)**
+  - No, this project will use existing connections and information types already present in vets-api. Both medical copayments and benefit overpayment debts are already available in existing VA backend systems. We will be creating a new mobile-specific endpoint to access this existing data.
 - Do you need to poll any APIs for status?
   - No, APIs involved will use standard request-response patterns
 - Are you handling all failure and error cases while in custody of your users's data?
   - Yes, standard error handling and logging patterns in vets-api will be implemented. We will handle API failures gracefully, providing clear error messages to the frontend and logging detailed error information for debugging purposes
 - **Does this update change shared code?**
+  - No, this update will add a new medical_copays controller and related mobile endpoints without modifying existing shared backend code or libraries.
 - **What information will be captured in logs or metrics?**
+  - We will follow existing logging patterns and standards already established in vets-api. No additional logging outside of these standard patterns will be implemented.
 - **Does this project/update involve user-uploaded data? Are user-uploaded files being scanned for viruses?**
+  - No, this project does not involve user-uploaded data or files. It only displays existing debt and copayment information.
 - **Does this project/update generate intermediate or "temporary" files during processing? If so, where and how are the temporary files materialized? What is the cleanup/removal process or mechanism?**
+  - No, this project does not generate any intermediate or temporary files during processing. All data flows through standard API request-response patterns.
 
 ## Internal API changes
 - List new or modified APIs in `vets-api`
@@ -49,9 +55,13 @@
 - Describe expected call patterns
   - API calls will follow standard REST request patterns, triggered when users navigate to relevant screens in the mobile app (debt overview, debt details, copayments, etc.)
 - **Are there new endpoints or services that require rate limiting or throttling?**
+  - No, the new medical_copays controller endpoints will follow existing vets-api rate limiting patterns already in place.
 - **Are there any third party integrations, and how are they vetted?**
+  - No new third party integrations are being introduced. The project uses existing VA backend systems already vetted and integrated within vets-api.
 - **Are there any new scheduled/cron jobs? If so, how are their intervals and impact considered? (especially with regard to periods of higher traffic or times when Sidekiq and infrastructure is already handling a high volume of jobs?)**
+  - No, this project does not introduce any new scheduled or cron jobs. All functionality is based on real-time API requests.
 - **Is schema validation enforced (ex: using the vets-json-schema repo)?**
+  - No we will not be submitting any data, parameter protection will utilize rails params.permit
 
 ## External API changes
 - List new or modified APIs for upstream or external systems
@@ -75,8 +85,50 @@
 - Identify PII and PHI and where and how it will be stored, processed, expired and deleted
   - No new storage of PII or PHI is introduced. Existing vets-api standards and patterns for secure handling of sensitive data continue to apply
 - **Is this change introducing a large or new volume of data?**
+  - No, this change does not introduce large or new volumes of data. It displays existing debt and copayment data that is already stored//fetched in VA backend systems.
+## Caching Implementation
+
+The overpay copay feature leverages existing caching infrastructure in vets-api that is shared between both mobile and regular web endpoints. This ensures consistent performance and data handling across all access methods.
+
+### Architecture Overview
+- **Rails.cache with Redis backend**: Utilizes Rails' unified caching API with Redis as the storage engine, providing consistent interface and automatic serialization
+- **Shared services**: Mobile endpoints use the same underlying services (`DebtManagementCenter::DebtsService` and `MedicalCopays::VBS::Service`) as regular endpoints, ensuring identical caching behavior
+- **Cache pattern**: Implements cache-aside pattern where data is loaded on-demand and cached for subsequent requests
+
+### Technical Implementation Details
+
+#### Implementation References
+- **Debt Service**: [DebtManagementCenter::DebtsService](https://github.com/department-of-veterans-affairs/vets-api/blob/master/lib/debt_management_center/debts_service.rb#L99) - Cache key definition and TTL logic
+- **Medical Copays Service**: [MedicalCopays::VBS::Service](https://github.com/department-of-veterans-affairs/vets-api/blob/master/app/services/medical_copays/vbs/service.rb#L65) - Empty response caching logic  
+
+#### Cache Keys
+- **Debt data**: `"debts_data_#{user.uuid}"` - User-specific cache keys ensure data isolation
+- **Medical copays**: `"vbs_copays_data_#{user.uuid}"` - Separate keying for copayment data from VBS system
+
+#### TTL Strategy
+- **Debt data**: 1 hour (3600 seconds) TTL for overpayment debt information  
+- **Medical copays**: Uses same dynamic TTL strategy as debt data for empty responses
+- **Empty responses**: Dynamic TTL set to expire at 5:00 AM UTC
+
+#### Cache Management
+- **Expiration**: TTL-based expiration only - no explicit cache invalidation mechanisms
+- **Empty response handling**: Special logic caches empty responses until 5 AM UTC
+- **Error handling**: Cache misses trigger fresh API calls to upstream systems
+
+### Performance Monitoring
+- **StatsD metrics**: Comprehensive tracking of cache hits, misses, and empty responses
+- **Key metrics tracked**: 
+  - `api.dmc.init_cached_debts.cached_response_returned` - Debt cache hits
+  - `api.dmc.init_cached_debts.empty_response_cached` - Empty debt response caching
+  - `api.dmc.get_debts.success/failure` - Debt API call success/failure rates
+  - `api.mcp.vbs.init_cached_copays.cached_response_returned` - Medical copay cache hits
+  - `api.mcp.vbs.init_cached_copays.empty_response_cached` - Empty copay response caching
+  - `api.mcp.vbs.pdf.total/failure` - PDF statement generation tracking
+
 - **Do these changes impact database or caching layers (ex: Redis, Postgres)? Do the changes have implications for data volume, memory, or CPU usage to consider?**
+  - No significant impact on database or caching layers. The new API endpoints will use existing database queries and caching patterns already established in vets-api.
 - **Does this project/update expect to persist information? What is the expiration policy for data added to the system? What is the cleanup/removal process or mechanism?**
+  - No, this project does not persist any new information. It only retrieves and displays existing data from VA backend systems without storing additional data in the mobile app or vets-api.
 
 ## Libraries and dependencies
 - No new libraries/dependencies are expected to be added
@@ -86,10 +138,18 @@
   - Key areas to monitor for the user include screen views, statement downloads, and url navigation to pay.gov with Firebase/Google Analytics
   - Success and errors through the API will be tracked and alerted through datadog and linked to an alert slack channel
 - **Are you introducing any custom metric tags? Have you considered their cost and potential cardinality? High cardinality = higher cost**
+  - Yes, we plan to introduce custom metric tags via Firebase to track specific user interactions related to benefit overpayments and medical copayments. The metrics will include:
+    - Total number of views of benefit overpayments and medical copayments screens (tracked monthly)
+    - Overall app volume after debt feature implementation (tracked monthly) 
+    - Total number of clicks on links to access VA.gov for payments (tracked monthly)
+    - Total number of clicks on empty state screens for benefit overpayments and medical copayments (tracked monthly for design assessment)
+    - Downloads of PDF copay statements
+    - Error alerts shown to the user
 - **Are there any sensitive data risks with logging?**
+  - No significant sensitive data risks. Logging will follow existing vets-api patterns that exclude PII/PHI from logs.
 
 ## Infrastructure and network changes
-- List any changes or additions
+- No new infrastructure or network changes will happen as part of this effort
 
 ## Test strategy
 - Describe automated, manual and user acceptance test strategy:
@@ -160,21 +220,30 @@ Please provide the following documentation as attachments.
 - Architecture Diagram:
 This diagram must go beyond simple boxes and lines. It must clearly indicate which portions of the architecture are within the scope of the review, which portions are dependencies within the product, and which portions are external dependencies.
 This diagram must also illustrate the following specifics.
+  - [Link to Architecture Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-architecture-diagram-20250806.md)
   - Which implementation of security approaches were considered along with the approach that was chosen and why?
+    - The implementation uses existing security approaches to authenticate users and connect to the VA network.
   - If there are any libraries or components that this code base will depend upon that are currently not yet part of the code base? How and why were these selected?
+    - No new libraries or components will be utilized.
 - Incident Response Plan, including Points of Contact for your system and dependent VA back-ends.
   - The FM team (with support from the MFS team) will be responsible for any corrections that need to be made. We can be reached in this [slack channel](https://dsva.slack.com/archives/C05RJS5DANT). The plan for fixing and timeline will depend on the specific nature of the problem, but we are a full-time contract and expect to be able to address issues promptly.
     - If a security vulnerability is discovered or reported in this code base, what is the plan and timeline for rolling out the fix?
       - We’ll triage and develop a solution immediately, then test and deploy the fix (typically within 72 hours), with stakeholders notified as soon as it’s live. 
-- Sequence Diagram:
-This diagram must include any authentication steps if this is an authenticated experience.
+- Sequence Diagram: This diagram must include any authentication steps if this is an authenticated experience.
+  - [Link to Sequence Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-sequence-diagram-20250808.md)
 - Data Flow Diagram:
 This diagram must illustrate the following specifics.
+  - [Link to Data Flow Diagram](https://github.com/department-of-veterans-affairs/va.gov-team-sensitive/blob/master/platform/engineering/collaboration-cycle/architecture-intent/diagrams/mobile-feature-support/overpayments-copays-data-flow-diagram-20250808.md)
   - What data is collected or used, and where, including information such as credentials used by this system?
+    - The user's email and password are used to log into the mobile app.
   - Where is the data is stored and how, including information such as any encryption used?
+    - No data is stored.
   - How is the data transferred, including information such as any encryption used?
+    - All data is transferred via HTTPS.
   - Who accesses the data and in what capacity (read or read-write)?
+    - The mobile app user has access to the data in a read-only capacity.
   - What is the audit trail of data access and manipulation?
+    - No audit trail is generated and there is no manipulation.
 - API Endpoint Documentation:
 This may include a link to a Swagger/OpenAPI document. Any new API endpoints introduced by this product or feature must be explicitly identified.
   - We will be adding new endpoints `v0/medical_copays` and `/v0/medical_copays/get_pdf_statement_by_id/{id}` to the mobile api. It is currently in development and documentation will be noted once that work is completed.
