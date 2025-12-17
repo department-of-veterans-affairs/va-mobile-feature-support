@@ -7,7 +7,7 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
-## Overpayment and Copayment Implementation | 12/15/2025
+## Overpayment and Copayment Implementation | 12/17/2025
 - All overpayment and copayment features are implemented in the mobile app with a few exceptions:
   - The team still needs to add separate `overpayments` and `copays` feature flags to allow for separate release cycles.
   - The team still needs to fix a few accessibilty issues.
