@@ -1,0 +1,77 @@
+graph TD
+    %% External Users and Devices
+    Veteran[Veteran User]
+    MobileApp[VA Mobile App<br/>VeteranStatusScreen.tsx]
+    
+    %% VA Platform AWS Environment Boundary
+    subgraph "VA Platform AWS Environment"
+        direction TB
+        
+        %% Web Platform
+        subgraph "VA.gov Web Platform"
+            WebApp[va.gov Website<br/>VeteranStatusCard]
+        end
+        
+        %% API Platform  
+        subgraph "API Platform"
+            MobileAPI[Mobile API<br/>api.va.gov]
+            VetsAPI[vets-api<br/>Rails Application]
+        end
+        
+        %% Platform Services
+        subgraph "Platform Infrastructure"
+            Auth[Authentication]
+            Monitoring[Monitoring]
+        end
+    end
+    
+    %% External VA Systems
+    subgraph "External VA Systems"
+        direction TB
+        Lighthouse[Lighthouse API<br/>Veteran Verification]
+        VAProfile[VA Profile<br/>User Info & Service History]
+        DisabilityAPI[Lighthouse Benefits<br/>Disability Ratings]
+    end
+    
+    %% User Interactions
+    Veteran --> WebApp
+    Veteran --> MobileApp
+    
+    %% Platform Flows
+    WebApp --> VetsAPI
+    MobileApp --> MobileAPI
+    MobileAPI --> VetsAPI
+    
+    %% Authentication
+    WebApp --> Auth
+    MobileApp --> Auth
+    
+    %% External Data Collection
+    VetsAPI --> Lighthouse
+    VetsAPI --> VAProfile  
+    VetsAPI --> DisabilityAPI
+    
+    %% Data Returns
+    Lighthouse -->|Veteran Status| VetsAPI
+    VAProfile -->|User Info & Service History| VetsAPI
+    DisabilityAPI -->|Disability Rating| VetsAPI
+    
+    %% Response to Users
+    VetsAPI -->|VSC Data + PDF| WebApp
+    VetsAPI -->|VSC Data| MobileAPI
+    MobileAPI -->|VSC Data| MobileApp
+    
+    %% Monitoring
+    VetsAPI --> Monitoring
+    
+    %% Final Display
+    WebApp --> Veteran
+    MobileApp --> Veteran
+    
+    %% Styling
+    classDef platformBoundary fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef externalSystem fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    classDef mfsComponent fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    
+    class WebApp,MobileApp mfsComponent
+    class Lighthouse,VAProfile,DisabilityAPI externalSystem
