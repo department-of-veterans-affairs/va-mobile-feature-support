@@ -54,6 +54,6 @@ Please reach out to us at our DSVA Slack channel: `#mobile-feature-support-publi
 - Michelle Middaugh, VA Product Owner, VA, suzanne.middaugh@va.gov
 - Parker Baranowski, Program Manager, Oddball, parker.baranowski@oddball.io
 - Natalie Gibbons, Product Lead, Oddball, natalie.davied@oddball.io
-- Emily Goodrich, Delivery Lead, Oddball, jason.dehaan@oddball.io
-- Dave Formanek, Tech Lead, Oddball, alex.teal@oddball.io
+- Emily Goodrich, Delivery Lead, Oddball, emily.goodrich@oddball.io
+- Dave Formanek, Tech Lead, Oddball, dave.formanek@oddball.io
 - Natasha Huckleberry, UX Lead, Oddball, natasha.huckleberry@oddball.io 
