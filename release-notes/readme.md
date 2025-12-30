@@ -7,6 +7,11 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## Split overpayCopay Feature Flag | 12/30/2025
+- Removed instances of `overpayCopay` feature flag
+- Replaced features related to overpayments with the `overpayments` feature flag
+- Replaced features related to copayments with the `copayments` feature flag
+  
 ## Overpayment and Copayment Implementation | 12/17/2025
 - All overpayment and copayment features are implemented in the mobile app with a few exceptions:
   - The team still needs to add separate `overpayments` and `copays` feature flags to allow for separate release cycles.
