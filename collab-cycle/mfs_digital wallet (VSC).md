@@ -21,16 +21,22 @@ Some of the items below may not apply to your work--that's okay. You may not be 
 ## Frontend changes
 
 - Identify any significant code changes
-  - Implement platform-specific "Add to Wallet" buttons for Apple and Google Wallet
-  - Fetch and handle digital wallet passes (.pkpass for Apple, JWT/URL for Google) from backend APIs
-  - Handling user permissions and errors
+  - Implement platform-specific “Add to Wallet” entry points for Apple Wallet and Google Wallet
+  - Fetch and handle digital wallet artifacts from backend APIs (**`.pkpass` for Apple**, **JWT/URL for Google**)
+  - Handle user-facing states and edge cases (loading, network/provider errors, and user cancelation)
+
 - Identify any new design system components needed or changes to current components
   - No new custom components required
   - Use officially branded Apple Wallet and Google Wallet buttons per platform guidelines
+
 - Does this update change shared code?
-  - No, it does not.
+  - These changes are expected to primarily touch the **VA Mobile app** and the **wallet backend** ([mobile-wallet-poc](https://github.com/department-of-veterans-affairs/mobile-wallet-poc)). We currently have a standalone PoC repo; if/when the implementation matures, the backend capability may be migrated into **vets-api**, which would introduce shared-code considerations at that time.
+
 - Describe any product analytics being gathered
-  - We want analytics to track when a user adds the VSC to their wallet for both iOS and Android platforms
+  - Track wallet funnel events per platform:
+    - User taps “Add to Wallet” / begins add flow
+    - Pass issuance/creation request **succeeds or fails** (capture high-level failure category only)
+    - User **successfully adds** the VSC to their wallet or **cancels** the add flow (where the platform allows detection)
 
 ## Backend changes
 
@@ -81,12 +87,23 @@ Some of the items below may not apply to your work--that's okay. You may not be 
 ## Metrics, logging, observability, alerting
 
 - Identify key areas to monitor
-  - Total number of downloads of the Veteran Status Card to add the card to an Apple Wallet
-  - Total number of downloads of the Veteran Status Card to add the card to a Google Wallet
+  - Total number of attempts to add the Veteran Status Card to the Apple Wallet
+  - Total number of attempts to add the Veteran Status Card to the Google Wallet
+  - Issuance success rate and error rate (Apple vs Google), plus basic latency for issuance endpoints
+
 - Are you introducing any custom metric tags? Have you considered their cost and potential cardinality? High cardinality = higher cost
-  - No, we've not considered custom metric tags
+  - Not determined yet. As instrumentation is finalized, we will review any proposed metric tags to ensure they remain low-cardinality and cost-conscious, and that no user- or device-identifying values are captured.
+
 - Are there any sensitive data risks with logging?
-  - We would only log interaction events like number of downloads, no personal information will be logged
+  - Yes — wallet payloads can contain sensitive fields.
+  - Logging must **not** include:
+    - pass payload/user data
+    - JWT claims/tokens
+    - device push tokens
+    - serial numbers tied to a user
+    - any user/device identifiers
+  - Logs should be limited to operational metadata and follow existing VA mobile/vets-api standards for excluding PII/PHI.
+
 ## Infrastructure and network changes
   - Apple: Implement PassKit web-service endpoints (register device, check updates, deliver pass) and serve a freshly signed `.pkpass`. Trigger silent updates via APNs when data changes.
     - DB for pass metadata (`serialNumber`, `authenticationToken`, `deviceID`, `pushToken`).
