@@ -7,6 +7,10 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VSC API Service | 1/29/2026
+- Implemented a fix for the 500 errors coming from the service
+- Created inherited VSC instance for the `mobile` module
+
 ## Split overpayCopay Feature Flag | 12/30/2025
 - Removed instances of `overpayCopay` feature flag
 - Replaced features related to overpayments with the `overpayments` feature flag
