@@ -7,9 +7,18 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VSC API Service | 2/18/2026
+- Updated the ineligibility messages returned by the service to match content updates.
+- Updated the error messages returned by the service to match content updates.
+
 ## VSC API Service | 1/29/2026
 - Implemented a fix for the 500 errors coming from the service
 - Created inherited VSC instance for the `mobile` module
+
+## Optimize Overpay API | 1/20/2026
+- Added ability to return the number of debts a veteran has, rather than the entire list of debts.
+  - Same endpoint with a query param `countOnly` added.
+  - When `countOnly` is present and set to true, only debt count is returned.
 
 ## Split overpayCopay Feature Flag | 12/30/2025
 - Removed instances of `overpayCopay` feature flag
