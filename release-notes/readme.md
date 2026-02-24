@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VSC Integrate New Endpoint | 2/24/2026
+- Integrated the new `/v0/veteran_status_card` endpoint and put it behind a feature flag so we can test between the old and new code for the VSC.
+
 ## VSC API Service | 2/19/2026
 - Created "Veteran Status Card V2" dashboard in DataDog with the same metrics from the original dashboard.
 
