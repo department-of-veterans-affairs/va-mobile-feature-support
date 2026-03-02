@@ -7,6 +7,9 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VSC API Service | 3/2/2026
+- Updated logic to check for ICN presence before VetVerificationStatus request, and EDIPI presence before VAProfile request; return PERSON_NOT_FOUND if fields are missing
+
 ## VSC Integrate New Endpoint | 2/24/2026
 - Integrated the new `/v0/veteran_status_card` endpoint and put it behind a feature flag so we can test between the old and new code for the VSC.
 
