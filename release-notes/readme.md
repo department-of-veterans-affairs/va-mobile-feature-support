@@ -7,6 +7,12 @@ Please view the release notes below for information about our deployments to var
 - [Who are our stakeholders?](https://github.com/department-of-veterans-affairs/va-mobile-feature-support?tab=readme-ov-file#key-stakeholders)
 
 ------
+## VSC API Service | 3/4/2026
+- Change NO_SSC_CHECK to ELIGIBLE_NO_SSC_CHECK and INELIGIBLE_NO_SSC_CHECK
+- Implement performance upgrades for parallel service requests to reduce latency
+- Add additional logging to signify which message the user is actually seeing, paired with a new DataDog chart
+- Update all "SSC" messages to have ELIGIBLE or INELIGIBLE prepended for more clarity
+
 ## VSC API Service | 3/2/2026
 - Updated logic to check for ICN presence before VetVerificationStatus request, and EDIPI presence before VAProfile request; return PERSON_NOT_FOUND if fields are missing
 
